@@ -7,3 +7,4 @@ Un spital are o farmacie proprie si mai multe sectii. Necesarul de medicamente p
 - un  terminal  pentru  farmacie:  Farmacistii  observa  lista  comenzilor  facute  de  pe  sectii, prioritizata după momentul sosirii acestora. Pentru onorarea unei comenzi, farmacistul o selecteaza din lista, (pregateste medicamentele si le trimite pe sectii) dupa care declanseaza un buton "comanda onorata". În urma acestei acțiuni, comanda este eliminata din lista afisata de farmacie si apare ca si onorata in fereastra sectiei care a inițiat-o. 
 - prioritate comenzi
 - stoc farmacie (stoc limitat, etc.)
+- confirmare comanda
