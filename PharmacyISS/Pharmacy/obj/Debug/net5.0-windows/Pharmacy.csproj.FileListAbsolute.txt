@@ -1,0 +1,15 @@
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.exe
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.deps.json
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.runtimeconfig.json
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.runtimeconfig.dev.json
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.dll
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\ref\Pharmacy.dll
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Pharmacy.pdb
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.AssemblyInfoInputs.cache
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.AssemblyInfo.cs
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.csproj.CoreCompileInputs.cache
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.dll
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\ref\Pharmacy.dll
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.pdb
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.genruntimeconfig.cache
