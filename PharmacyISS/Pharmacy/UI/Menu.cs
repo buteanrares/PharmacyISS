@@ -35,10 +35,9 @@ namespace Pharmacy.UI
 
             if (e.State == DrawItemState.Selected)
             {
-
                 // Draw a different background color, and don't paint a focus rectangle.
-                _textBrush = new SolidBrush(Color.Red);
-                g.FillRectangle(Brushes.Gray, e.Bounds);
+                _textBrush = new SolidBrush(Color.Blue);
+                g.FillRectangle(Brushes.LightGray, e.Bounds);
             }
             else
             {
@@ -47,13 +46,14 @@ namespace Pharmacy.UI
             }
 
             // Use our own font.
-            Font _tabFont = new Font("Arial", 10.0f, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font _tabFont = new Font("SegoeUI", 13.0f, FontStyle.Regular, GraphicsUnit.Point);
 
             // Draw string. Center the text.
             StringFormat _stringFlags = new StringFormat();
             _stringFlags.Alignment = StringAlignment.Center;
-            _stringFlags.LineAlignment = StringAlignment.Center;
+            _stringFlags.LineAlignment = StringAlignment.Far;
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
+            g.DrawImage(this.imageList.Images[0],30,15);
         }
     }
 }

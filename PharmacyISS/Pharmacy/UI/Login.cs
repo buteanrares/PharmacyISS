@@ -16,11 +16,6 @@ namespace Pharmacy
         public Login()
         {
             InitializeComponent();
-            positionControls();
-        }
-
-        private void positionControls()
-        {
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
@@ -30,13 +25,18 @@ namespace Pharmacy
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            /**
+            /*
                 IF Login credentials.....
-                This form disable & hide
-             */
+            */
             var Menu = new Menu();
+            Menu.FormClosed += Menu_FormClosed;
             Menu.Show();
             this.Hide();
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
