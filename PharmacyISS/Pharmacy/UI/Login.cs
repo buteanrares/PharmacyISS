@@ -36,12 +36,6 @@ namespace Pharmacy
              */
             var Menu = new Menu();
             Menu.Show();
-            this.Close();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
             this.Hide();
         }
     }
