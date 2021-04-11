@@ -17,3 +17,4 @@ C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-wind
 C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.Login.resources
 C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.csproj.GenerateResource.cache
 C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.Properties.Resources.resources
+C:\Users\butea\VSProjects\PharmacyISS\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.UI.Menu.resources

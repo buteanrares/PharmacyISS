@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharmacy.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,23 @@ namespace Pharmacy
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             passwordTextBox.PasswordChar = '•';
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            /**
+                IF Login credentials.....
+                This form disable & hide
+             */
+            var Menu = new Menu();
+            Menu.Show();
+            this.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }
