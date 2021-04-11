@@ -15,7 +15,7 @@ namespace Pharmacy.UI
         public Menu()
         {
             InitializeComponent();
-            tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
+            tabControl.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -28,10 +28,10 @@ namespace Pharmacy.UI
             Brush _textBrush;
 
             // Get the item from the collection.
-            TabPage _tabPage = tabControl1.TabPages[e.Index];
+            TabPage _tabPage = tabControl.TabPages[e.Index];
 
             // Get the real bounds for the tab rectangle.
-            Rectangle _tabBounds = tabControl1.GetTabRect(e.Index);
+            Rectangle _tabBounds = tabControl.GetTabRect(e.Index);
 
             if (e.State == DrawItemState.Selected)
             {
@@ -46,14 +46,14 @@ namespace Pharmacy.UI
             }
 
             // Use our own font.
-            Font _tabFont = new Font("SegoeUI", 13.0f, FontStyle.Regular, GraphicsUnit.Point);
+            Font _tabFont = new Font("FiraMono-Regular", 14.0f, FontStyle.Bold, GraphicsUnit.Point);
 
             // Draw string. Center the text.
             StringFormat _stringFlags = new StringFormat();
             _stringFlags.Alignment = StringAlignment.Center;
             _stringFlags.LineAlignment = StringAlignment.Far;
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
-            g.DrawImage(this.imageList.Images[0],30,15);
+            g.DrawImage(this.imageList.Images[0], 30, 15);
         }
     }
 }
