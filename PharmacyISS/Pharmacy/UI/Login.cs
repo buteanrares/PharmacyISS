@@ -27,14 +27,27 @@ namespace Pharmacy
         {
             /*
                 IF Login credentials.....
+                IF unit / pharmacy employee...
             */
-            var Menu = new Menu();
-            Menu.FormClosed += Menu_FormClosed;
-            Menu.Show();
+
+
+            //var UnitMenu = new Pharmacy.UI.UnitMenu();
+            //UnitMenu.FormClosed += UnitMenu_FormClosed;
+            //UnitMenu.Show();
+
+            var PharmacyMenu = new PharmacyMenu();
+            PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
+            PharmacyMenu.Show();
+
             this.Hide();
         }
 
-        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        private void UnitMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PharmacyMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
