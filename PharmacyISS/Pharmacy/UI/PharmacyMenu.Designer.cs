@@ -32,6 +32,10 @@ namespace Pharmacy.UI
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.home = new System.Windows.Forms.TabPage();
+            this.notificationsInfoLabel = new System.Windows.Forms.Label();
+            this.unitInfoLabel = new System.Windows.Forms.Label();
+            this.loggedInInfoLabel = new System.Windows.Forms.Label();
+            this.homeLabel = new System.Windows.Forms.Label();
             this.stock = new System.Windows.Forms.TabPage();
             this.order = new System.Windows.Forms.TabPage();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
@@ -39,10 +43,6 @@ namespace Pharmacy.UI
             this.homePictureBox = new System.Windows.Forms.PictureBox();
             this.storagePictureBox = new System.Windows.Forms.PictureBox();
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
-            this.homeLabel = new System.Windows.Forms.Label();
-            this.loggedInInfoLabel = new System.Windows.Forms.Label();
-            this.unitInfoLabel = new System.Windows.Forms.Label();
-            this.notificationsInfoLabel = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
@@ -67,6 +67,7 @@ namespace Pharmacy.UI
             this.tabControl.Size = new System.Drawing.Size(865, 560);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(tabControl_SelectedIndexChanged);
             // 
             // home
             // 
@@ -82,12 +83,52 @@ namespace Pharmacy.UI
             this.home.Text = "Home";
             this.home.UseVisualStyleBackColor = true;
             // 
+            // notificationsInfoLabel
+            // 
+            this.notificationsInfoLabel.AutoSize = true;
+            this.notificationsInfoLabel.Font = new System.Drawing.Font("Fira Sans", 17.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.notificationsInfoLabel.Location = new System.Drawing.Point(44, 293);
+            this.notificationsInfoLabel.Name = "notificationsInfoLabel";
+            this.notificationsInfoLabel.Size = new System.Drawing.Size(149, 28);
+            this.notificationsInfoLabel.TabIndex = 3;
+            this.notificationsInfoLabel.Text = "Notifications:";
+            // 
+            // unitInfoLabel
+            // 
+            this.unitInfoLabel.AutoSize = true;
+            this.unitInfoLabel.Font = new System.Drawing.Font("Fira Mono", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.unitInfoLabel.Location = new System.Drawing.Point(158, 195);
+            this.unitInfoLabel.Name = "unitInfoLabel";
+            this.unitInfoLabel.Size = new System.Drawing.Size(54, 23);
+            this.unitInfoLabel.TabIndex = 2;
+            this.unitInfoLabel.Text = "Unit";
+            // 
+            // loggedInInfoLabel
+            // 
+            this.loggedInInfoLabel.AutoSize = true;
+            this.loggedInInfoLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.loggedInInfoLabel.Location = new System.Drawing.Point(96, 158);
+            this.loggedInInfoLabel.Name = "loggedInInfoLabel";
+            this.loggedInInfoLabel.Size = new System.Drawing.Size(116, 23);
+            this.loggedInInfoLabel.TabIndex = 1;
+            this.loggedInInfoLabel.Text = "Logged in as";
+            // 
+            // homeLabel
+            // 
+            this.homeLabel.AutoSize = true;
+            this.homeLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.homeLabel.Location = new System.Drawing.Point(44, 30);
+            this.homeLabel.Name = "homeLabel";
+            this.homeLabel.Size = new System.Drawing.Size(168, 64);
+            this.homeLabel.TabIndex = 0;
+            this.homeLabel.Text = "Home";
+            // 
             // stock
             // 
             this.stock.Location = new System.Drawing.Point(79, 4);
             this.stock.Name = "stock";
             this.stock.Padding = new System.Windows.Forms.Padding(3);
-            this.stock.Size = new System.Drawing.Size(782, 552);
+            this.stock.Size = new System.Drawing.Size(779, 552);
             this.stock.TabIndex = 1;
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
@@ -97,7 +138,7 @@ namespace Pharmacy.UI
             this.order.Location = new System.Drawing.Point(79, 4);
             this.order.Name = "order";
             this.order.Padding = new System.Windows.Forms.Padding(3);
-            this.order.Size = new System.Drawing.Size(782, 552);
+            this.order.Size = new System.Drawing.Size(779, 552);
             this.order.TabIndex = 2;
             this.order.Text = "Order";
             this.order.UseVisualStyleBackColor = true;
@@ -118,6 +159,7 @@ namespace Pharmacy.UI
             this.logoutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoutPictureBox.TabIndex = 1;
             this.logoutPictureBox.TabStop = false;
+            this.logoutPictureBox.Click += new System.EventHandler(this.logoutPictureBox_Click);
             // 
             // homePictureBox
             // 
@@ -153,46 +195,6 @@ namespace Pharmacy.UI
             this.orderPictureBox.TabIndex = 4;
             this.orderPictureBox.TabStop = false;
             this.orderPictureBox.Click += new System.EventHandler(this.orderPictureBox_Click);
-            // 
-            // homeLabel
-            // 
-            this.homeLabel.AutoSize = true;
-            this.homeLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.homeLabel.Location = new System.Drawing.Point(44, 30);
-            this.homeLabel.Name = "homeLabel";
-            this.homeLabel.Size = new System.Drawing.Size(168, 64);
-            this.homeLabel.TabIndex = 0;
-            this.homeLabel.Text = "Home";
-            // 
-            // loggedInInfoLabel
-            // 
-            this.loggedInInfoLabel.AutoSize = true;
-            this.loggedInInfoLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.loggedInInfoLabel.Location = new System.Drawing.Point(96, 158);
-            this.loggedInInfoLabel.Name = "loggedInInfoLabel";
-            this.loggedInInfoLabel.Size = new System.Drawing.Size(116, 23);
-            this.loggedInInfoLabel.TabIndex = 1;
-            this.loggedInInfoLabel.Text = "Logged in as";
-            // 
-            // unitInfoLabel
-            // 
-            this.unitInfoLabel.AutoSize = true;
-            this.unitInfoLabel.Font = new System.Drawing.Font("Fira Mono", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.unitInfoLabel.Location = new System.Drawing.Point(158, 195);
-            this.unitInfoLabel.Name = "unitInfoLabel";
-            this.unitInfoLabel.Size = new System.Drawing.Size(54, 23);
-            this.unitInfoLabel.TabIndex = 2;
-            this.unitInfoLabel.Text = "Unit";
-            // 
-            // notificationsInfoLabel
-            // 
-            this.notificationsInfoLabel.AutoSize = true;
-            this.notificationsInfoLabel.Font = new System.Drawing.Font("Fira Sans", 17.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.notificationsInfoLabel.Location = new System.Drawing.Point(44, 293);
-            this.notificationsInfoLabel.Name = "notificationsInfoLabel";
-            this.notificationsInfoLabel.Size = new System.Drawing.Size(149, 28);
-            this.notificationsInfoLabel.TabIndex = 3;
-            this.notificationsInfoLabel.Text = "Notifications:";
             // 
             // PharmacyMenu
             // 

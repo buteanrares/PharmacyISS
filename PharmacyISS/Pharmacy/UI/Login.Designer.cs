@@ -1,5 +1,4 @@
-﻿
-namespace Pharmacy
+﻿namespace Pharmacy
 {
     partial class Login
     {
@@ -29,7 +28,6 @@ namespace Pharmacy
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -98,7 +96,7 @@ namespace Pharmacy
             // 
             // loginPictureBox
             // 
-            this.loginPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("loginPictureBox.Image")));
+            this.loginPictureBox.Image = global::Pharmacy.Properties.Resources.login;
             this.loginPictureBox.Location = new System.Drawing.Point(126, 66);
             this.loginPictureBox.Name = "loginPictureBox";
             this.loginPictureBox.Size = new System.Drawing.Size(162, 107);
@@ -137,4 +135,3 @@ namespace Pharmacy
         private System.Windows.Forms.PictureBox loginPictureBox;
     }
 }
-

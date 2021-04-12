@@ -68,6 +68,7 @@ namespace Pharmacy.UI
             this.tabControl.Size = new System.Drawing.Size(865, 560);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(tabControl_SelectedIndexChanged);
             // 
             // home
             // 
@@ -126,6 +127,7 @@ namespace Pharmacy.UI
             this.logoutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoutPictureBox.TabIndex = 1;
             this.logoutPictureBox.TabStop = false;
+            this.logoutPictureBox.Click += new System.EventHandler(logoutPictureBox_Click);
             // 
             // homePictureBox
             // 
