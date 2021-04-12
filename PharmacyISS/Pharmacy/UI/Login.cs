@@ -31,25 +31,25 @@ namespace Pharmacy
             */
 
 
-            //var UnitMenu = new Pharmacy.UI.UnitMenu();
-            //UnitMenu.FormClosed += UnitMenu_FormClosed;
-            //UnitMenu.Show();
+            var UnitMenu = new UnitMenu();
+            UnitMenu.FormClosed += UnitMenu_FormClosed;
+            UnitMenu.Show();
 
-            var PharmacyMenu = new PharmacyMenu();
-            PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
-            PharmacyMenu.Show();
+            //var PharmacyMenu = new PharmacyMenu();
+            //PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
+            //PharmacyMenu.Show();
 
             this.Hide();
         }
 
         private void UnitMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Show();
         }
 
         private void PharmacyMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Show();
         }
     }
 }

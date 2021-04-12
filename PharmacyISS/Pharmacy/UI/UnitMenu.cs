@@ -15,45 +15,84 @@ namespace Pharmacy.UI
         public UnitMenu()
         {
             InitializeComponent();
-            tabControl.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
+            tabControl.DrawItem += new DrawItemEventHandler(tabControl_DrawItem);
+            this.logoutPictureBox.BackColor = Color.FromArgb(240, 240, 240);
+            this.homePictureBox.BackColor = Color.LightGray;
         }
 
-        private void tabControl1_DrawItem(Object sender, System.Windows.Forms.DrawItemEventArgs e)
+        private void tabControl_DrawItem(Object sender, System.Windows.Forms.DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
             Brush _textBrush;
-
-            // Get the item from the collection.
             TabPage _tabPage = tabControl.TabPages[e.Index];
-
-            // Get the real bounds for the tab rectangle.
             Rectangle _tabBounds = tabControl.GetTabRect(e.Index);
 
             if (e.State == DrawItemState.Selected)
             {
-                // Draw a different background color, and don't paint a focus rectangle.
                 g.FillRectangle(Brushes.LightGray, e.Bounds);
             }
             else
             {
-                _textBrush = new System.Drawing.SolidBrush(e.ForeColor);
+                _textBrush = new System.Drawing.SolidBrush(Color.DarkGray);
                 e.DrawBackground();
+            }
+        }
+
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl.SelectedIndex)
+            {
+                case 0:
+                    this.homePictureBox.BackColor = Color.LightGray;
+                    this.storagePictureBox.BackColor = Color.White;
+                    this.orderPictureBox.BackColor = Color.White;
+                    break;
+
+                case 1:
+                    this.homePictureBox.BackColor = Color.White;
+                    this.storagePictureBox.BackColor = Color.LightGray;
+                    this.orderPictureBox.BackColor = Color.White;
+                    break;
+
+                case 2:
+                    this.homePictureBox.BackColor = Color.White;
+                    this.storagePictureBox.BackColor = Color.White;
+                    this.orderPictureBox.BackColor = Color.LightGray;
+                    break;
+
+                default:
+                    break;
             }
         }
 
         private void homePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[0];
+            this.homePictureBox.BackColor = Color.LightGray;
+            this.storagePictureBox.BackColor = Color.White;
+            this.orderPictureBox.BackColor = Color.White;
         }
 
         private void storagePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[1];
+            this.homePictureBox.BackColor = Color.White;
+            this.storagePictureBox.BackColor = Color.LightGray;
+            this.orderPictureBox.BackColor = Color.White;
         }
 
         private void orderPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[2];
+            this.homePictureBox.BackColor = Color.White;
+            this.storagePictureBox.BackColor = Color.White;
+            this.orderPictureBox.BackColor = Color.LightGray;
+        }
+
+        private void logoutPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
