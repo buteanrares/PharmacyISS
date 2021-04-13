@@ -69,6 +69,8 @@ namespace Pharmacy.UI
             this.storagePictureBox = new System.Windows.Forms.PictureBox();
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.confirmPictureBox = new System.Windows.Forms.PictureBox();
+            this.refusePictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
@@ -80,6 +82,8 @@ namespace Pharmacy.UI
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refusePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -296,12 +300,14 @@ namespace Pharmacy.UI
             this.label5.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(29, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(455, 64);
+            this.label5.Size = new System.Drawing.Size(209, 64);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Pharmacy storage";
+            this.label5.Text = "Storage";
             // 
             // order
             // 
+            this.order.Controls.Add(this.refusePictureBox);
+            this.order.Controls.Add(this.confirmPictureBox);
             this.order.Controls.Add(this.label10);
             this.order.Controls.Add(this.dataGridView3);
             this.order.Controls.Add(this.textBox2);
@@ -489,6 +495,24 @@ namespace Pharmacy.UI
             this.Unit.HeaderText = "Unit";
             this.Unit.Name = "Unit";
             // 
+            // confirmPictureBox
+            // 
+            this.confirmPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.confirmPictureBox.Location = new System.Drawing.Point(550, 476);
+            this.confirmPictureBox.Name = "confirmPictureBox";
+            this.confirmPictureBox.Size = new System.Drawing.Size(100, 50);
+            this.confirmPictureBox.TabIndex = 9;
+            this.confirmPictureBox.TabStop = false;
+            // 
+            // refusePictureBox
+            // 
+            this.refusePictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.refusePictureBox.Location = new System.Drawing.Point(672, 476);
+            this.refusePictureBox.Name = "refusePictureBox";
+            this.refusePictureBox.Size = new System.Drawing.Size(100, 50);
+            this.refusePictureBox.TabIndex = 10;
+            this.refusePictureBox.TabStop = false;
+            // 
             // PharmacyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -518,6 +542,8 @@ namespace Pharmacy.UI
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refusePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,5 +589,7 @@ namespace Pharmacy.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn priority;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
+        private System.Windows.Forms.PictureBox refusePictureBox;
+        private System.Windows.Forms.PictureBox confirmPictureBox;
     }
 }

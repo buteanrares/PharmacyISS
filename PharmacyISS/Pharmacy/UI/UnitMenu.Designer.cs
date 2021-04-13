@@ -43,12 +43,6 @@ namespace Pharmacy.UI
             this.notificationsInfoLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.stock = new System.Windows.Forms.TabPage();
-            this.order = new System.Windows.Forms.TabPage();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.logoutPictureBox = new System.Windows.Forms.PictureBox();
-            this.homePictureBox = new System.Windows.Forms.PictureBox();
-            this.storagePictureBox = new System.Windows.Forms.PictureBox();
-            this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -56,14 +50,30 @@ namespace Pharmacy.UI
             this.packSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
+            this.order = new System.Windows.Forms.TabPage();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.logoutPictureBox = new System.Windows.Forms.PictureBox();
+            this.homePictureBox = new System.Windows.Forms.PictureBox();
+            this.storagePictureBox = new System.Windows.Forms.PictureBox();
+            this.orderPictureBox = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -209,8 +219,80 @@ namespace Pharmacy.UI
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(132, 133);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 23);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(59, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 23);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Search";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.packSize,
+            this.stockState});
+            this.dataGridView1.Location = new System.Drawing.Point(59, 168);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(462, 302);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "Medicine";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // packSize
+            // 
+            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.packSize.HeaderText = "Pack size";
+            this.packSize.Name = "packSize";
+            this.packSize.ReadOnly = true;
+            // 
+            // stockState
+            // 
+            this.stockState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.stockState.HeaderText = "Stock state";
+            this.stockState.Name = "stockState";
+            this.stockState.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(29, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(455, 64);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Pharmacy storage";
+            // 
             // order
             // 
+            this.order.Controls.Add(this.comboBox1);
+            this.order.Controls.Add(this.label9);
+            this.order.Controls.Add(this.dataGridView3);
+            this.order.Controls.Add(this.textBox2);
+            this.order.Controls.Add(this.label8);
+            this.order.Controls.Add(this.label7);
             this.order.Location = new System.Drawing.Point(79, 4);
             this.order.Name = "order";
             this.order.Padding = new System.Windows.Forms.Padding(3);
@@ -279,71 +361,82 @@ namespace Pharmacy.UI
             this.orderPictureBox.TabStop = false;
             this.orderPictureBox.Click += new System.EventHandler(this.orderPictureBox_Click);
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 23);
-            this.textBox1.TabIndex = 8;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(29, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 64);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Order";
             // 
-            // label6
+            // textBox2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(59, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 23);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Search";
+            this.textBox2.Location = new System.Drawing.Point(132, 133);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(146, 23);
+            this.textBox2.TabIndex = 9;
             // 
-            // dataGridView1
+            // label8
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.packSize,
-            this.stockState});
-            this.dataGridView1.Location = new System.Drawing.Point(59, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(462, 302);
-            this.dataGridView1.TabIndex = 6;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(59, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 23);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Search";
             // 
-            // name
+            // dataGridView3
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "Medicine";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderMedicine,
+            this.quantity});
+            this.dataGridView3.Location = new System.Drawing.Point(59, 168);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(458, 270);
+            this.dataGridView3.TabIndex = 10;
             // 
-            // packSize
+            // quantity
             // 
-            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.packSize.HeaderText = "Pack size";
-            this.packSize.Name = "packSize";
-            this.packSize.ReadOnly = true;
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 110;
             // 
-            // stockState
+            // orderMedicine
             // 
-            this.stockState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stockState.HeaderText = "Stock state";
-            this.stockState.Name = "stockState";
-            this.stockState.ReadOnly = true;
+            this.orderMedicine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.orderMedicine.HeaderText = "Medicine";
+            this.orderMedicine.Name = "orderMedicine";
             // 
-            // label5
+            // label9
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(29, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(455, 64);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Pharmacy storage";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(59, 475);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 23);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Priority";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Fira Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Low",
+            "Normal",
+            "High"});
+            this.comboBox1.Location = new System.Drawing.Point(137, 475);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 22);
+            this.comboBox1.TabIndex = 12;
             // 
             // UnitMenu
             // 
@@ -365,11 +458,14 @@ namespace Pharmacy.UI
             this.home.PerformLayout();
             this.stock.ResumeLayout(false);
             this.stock.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.order.ResumeLayout(false);
+            this.order.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,5 +497,13 @@ namespace Pharmacy.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn packSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockState;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
     }
 }
