@@ -29,18 +29,28 @@ namespace Pharmacy.UI
                     this.homePictureBox.BackColor = Color.LightGray;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.White;
+                    this.historyPictureBox.BackColor = Color.White;
                     break;
 
                 case 1:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.LightGray;
                     this.orderPictureBox.BackColor = Color.White;
+                    this.historyPictureBox.BackColor = Color.White;
                     break;
 
                 case 2:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.LightGray;
+                    this.historyPictureBox.BackColor = Color.White;
+                    break;
+
+                case 3:
+                    this.homePictureBox.BackColor = Color.White;
+                    this.storagePictureBox.BackColor = Color.White;
+                    this.orderPictureBox.BackColor = Color.White;
+                    this.historyPictureBox.BackColor = Color.LightGray;
                     break;
 
                 default:
@@ -73,6 +83,7 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.LightGray;
             this.storagePictureBox.BackColor = Color.White;
             this.orderPictureBox.BackColor = Color.White;
+            this.historyPictureBox.BackColor = Color.White;
         }
 
 
@@ -82,6 +93,7 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.White;
             this.storagePictureBox.BackColor = Color.LightGray;
             this.orderPictureBox.BackColor = Color.White;
+            this.historyPictureBox.BackColor = Color.White;
         }
 
 
@@ -91,6 +103,16 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.White;
             this.storagePictureBox.BackColor = Color.White;
             this.orderPictureBox.BackColor = Color.LightGray;
+            this.historyPictureBox.BackColor = Color.White;
+        }
+
+        private void historyPictureBox_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabControl.TabPages[3];
+            this.homePictureBox.BackColor = Color.White;
+            this.storagePictureBox.BackColor = Color.White;
+            this.orderPictureBox.BackColor = Color.White;
+            this.historyPictureBox.BackColor = Color.LightGray;
         }
 
 

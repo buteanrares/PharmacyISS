@@ -23,7 +23,7 @@ namespace Pharmacy
             passwordTextBox.PasswordChar = '•';
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButtonPictureBox_Click(object sender, EventArgs e)
         {
             /*
                 IF Login credentials.....
@@ -50,6 +50,11 @@ namespace Pharmacy
         private void PharmacyMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
+        }
+
+        private void exitPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
