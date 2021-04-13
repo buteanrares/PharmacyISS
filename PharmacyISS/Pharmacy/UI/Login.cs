@@ -31,13 +31,13 @@ namespace Pharmacy
             */
 
 
-            //var UnitMenu = new UnitMenu();
-            //UnitMenu.FormClosed += UnitMenu_FormClosed;
-            //UnitMenu.Show();
+            var UnitMenu = new UnitMenu();
+            UnitMenu.FormClosed += UnitMenu_FormClosed;
+            UnitMenu.Show();
 
-            var PharmacyMenu = new PharmacyMenu();
-            PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
-            PharmacyMenu.Show();
+            //var PharmacyMenu = new PharmacyMenu();
+            //PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
+            //PharmacyMenu.Show();
 
             this.Hide();
         }

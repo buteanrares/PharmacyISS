@@ -103,6 +103,7 @@ namespace Pharmacy.UI
             this.confirmationsPictureBox.BackColor = Color.White;
         }
 
+
         private void logoutPictureBox_Click(object sender, EventArgs e)
         {
             this.Close();
