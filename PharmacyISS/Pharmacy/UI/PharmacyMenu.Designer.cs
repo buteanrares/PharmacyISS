@@ -66,6 +66,15 @@ namespace Pharmacy.UI
             this.totalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersLabel = new System.Windows.Forms.Label();
             this.history = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.H_searchTextBox = new System.Windows.Forms.TextBox();
+            this.H_searchLabel = new System.Windows.Forms.Label();
+            this.historyDGV = new System.Windows.Forms.DataGridView();
+            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispatched = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.confirmed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historyLabel = new System.Windows.Forms.Label();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.logoutPictureBox = new System.Windows.Forms.PictureBox();
             this.homePictureBox = new System.Windows.Forms.PictureBox();
@@ -73,15 +82,6 @@ namespace Pharmacy.UI
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historyPictureBox = new System.Windows.Forms.PictureBox();
-            this.H_searchTextBox = new System.Windows.Forms.TextBox();
-            this.H_searchLabel = new System.Windows.Forms.Label();
-            this.historyDGV = new System.Windows.Forms.DataGridView();
-            this.historyLabel = new System.Windows.Forms.Label();
-            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatched = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.confirmed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
@@ -92,13 +92,13 @@ namespace Pharmacy.UI
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDGV)).BeginInit();
             this.history.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -115,7 +115,7 @@ namespace Pharmacy.UI
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(873, 560);
+            this.tabControl.Size = new System.Drawing.Size(876, 560);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
@@ -135,7 +135,7 @@ namespace Pharmacy.UI
             this.home.Location = new System.Drawing.Point(79, 4);
             this.home.Name = "home";
             this.home.Padding = new System.Windows.Forms.Padding(3);
-            this.home.Size = new System.Drawing.Size(704, 552);
+            this.home.Size = new System.Drawing.Size(790, 552);
             this.home.TabIndex = 3;
             this.home.Text = "Home";
             this.home.UseVisualStyleBackColor = true;
@@ -249,7 +249,7 @@ namespace Pharmacy.UI
             this.stock.Location = new System.Drawing.Point(79, 4);
             this.stock.Name = "stock";
             this.stock.Padding = new System.Windows.Forms.Padding(3);
-            this.stock.Size = new System.Drawing.Size(704, 552);
+            this.stock.Size = new System.Drawing.Size(790, 552);
             this.stock.TabIndex = 1;
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@ namespace Pharmacy.UI
             this.order.Location = new System.Drawing.Point(79, 4);
             this.order.Name = "order";
             this.order.Padding = new System.Windows.Forms.Padding(3);
-            this.order.Size = new System.Drawing.Size(704, 552);
+            this.order.Size = new System.Drawing.Size(790, 552);
             this.order.TabIndex = 2;
             this.order.Text = "Order";
             this.order.UseVisualStyleBackColor = true;
@@ -483,9 +483,95 @@ namespace Pharmacy.UI
             this.history.Controls.Add(this.historyLabel);
             this.history.Location = new System.Drawing.Point(79, 4);
             this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(790, 552);
+            this.history.Size = new System.Drawing.Size(793, 552);
             this.history.TabIndex = 4;
             this.history.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pharmacy.Properties.Resources.VIEWNOTE;
+            this.pictureBox1.Location = new System.Drawing.Point(606, 490);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // H_searchTextBox
+            // 
+            this.H_searchTextBox.Location = new System.Drawing.Point(132, 133);
+            this.H_searchTextBox.Name = "H_searchTextBox";
+            this.H_searchTextBox.Size = new System.Drawing.Size(146, 23);
+            this.H_searchTextBox.TabIndex = 8;
+            // 
+            // H_searchLabel
+            // 
+            this.H_searchLabel.AutoSize = true;
+            this.H_searchLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.H_searchLabel.Location = new System.Drawing.Point(59, 133);
+            this.H_searchLabel.Name = "H_searchLabel";
+            this.H_searchLabel.Size = new System.Drawing.Size(67, 23);
+            this.H_searchLabel.TabIndex = 7;
+            this.H_searchLabel.Text = "Search";
+            // 
+            // historyDGV
+            // 
+            this.historyDGV.AllowUserToAddRows = false;
+            this.historyDGV.AllowUserToDeleteRows = false;
+            this.historyDGV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.historyDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderNumber,
+            this.dispatched,
+            this.status,
+            this.confirmed});
+            this.historyDGV.Location = new System.Drawing.Point(59, 168);
+            this.historyDGV.Name = "historyDGV";
+            this.historyDGV.ReadOnly = true;
+            this.historyDGV.RowTemplate.Height = 25;
+            this.historyDGV.Size = new System.Drawing.Size(462, 302);
+            this.historyDGV.TabIndex = 6;
+            // 
+            // orderNumber
+            // 
+            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orderNumber.HeaderText = "Number";
+            this.orderNumber.Name = "orderNumber";
+            this.orderNumber.ReadOnly = true;
+            this.orderNumber.Width = 70;
+            // 
+            // dispatched
+            // 
+            this.dispatched.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dispatched.HeaderText = "Dispatched at";
+            this.dispatched.Name = "dispatched";
+            this.dispatched.ReadOnly = true;
+            this.dispatched.Width = 135;
+            // 
+            // status
+            // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // confirmed
+            // 
+            this.confirmed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.confirmed.HeaderText = "Confirmed at";
+            this.confirmed.Name = "confirmed";
+            this.confirmed.ReadOnly = true;
+            this.confirmed.Width = 135;
+            // 
+            // historyLabel
+            // 
+            this.historyLabel.AutoSize = true;
+            this.historyLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.historyLabel.Location = new System.Drawing.Point(29, 30);
+            this.historyLabel.Name = "historyLabel";
+            this.historyLabel.Size = new System.Drawing.Size(199, 64);
+            this.historyLabel.TabIndex = 5;
+            this.historyLabel.Text = "History";
             // 
             // imageList
             // 
@@ -557,92 +643,6 @@ namespace Pharmacy.UI
             this.historyPictureBox.TabStop = false;
             this.historyPictureBox.Click += new System.EventHandler(this.historyPictureBox_Click);
             // 
-            // H_searchTextBox
-            // 
-            this.H_searchTextBox.Location = new System.Drawing.Point(132, 133);
-            this.H_searchTextBox.Name = "H_searchTextBox";
-            this.H_searchTextBox.Size = new System.Drawing.Size(146, 23);
-            this.H_searchTextBox.TabIndex = 8;
-            // 
-            // H_searchLabel
-            // 
-            this.H_searchLabel.AutoSize = true;
-            this.H_searchLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.H_searchLabel.Location = new System.Drawing.Point(59, 133);
-            this.H_searchLabel.Name = "H_searchLabel";
-            this.H_searchLabel.Size = new System.Drawing.Size(67, 23);
-            this.H_searchLabel.TabIndex = 7;
-            this.H_searchLabel.Text = "Search";
-            // 
-            // historyDGV
-            // 
-            this.historyDGV.AllowUserToAddRows = false;
-            this.historyDGV.AllowUserToDeleteRows = false;
-            this.historyDGV.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historyDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderNumber,
-            this.dispatched,
-            this.status,
-            this.confirmed});
-            this.historyDGV.Location = new System.Drawing.Point(59, 168);
-            this.historyDGV.Name = "historyDGV";
-            this.historyDGV.ReadOnly = true;
-            this.historyDGV.RowTemplate.Height = 25;
-            this.historyDGV.Size = new System.Drawing.Size(462, 302);
-            this.historyDGV.TabIndex = 6;
-            // 
-            // historyLabel
-            // 
-            this.historyLabel.AutoSize = true;
-            this.historyLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.historyLabel.Location = new System.Drawing.Point(29, 30);
-            this.historyLabel.Name = "historyLabel";
-            this.historyLabel.Size = new System.Drawing.Size(199, 64);
-            this.historyLabel.TabIndex = 5;
-            this.historyLabel.Text = "History";
-            // 
-            // orderNumber
-            // 
-            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orderNumber.HeaderText = "Number";
-            this.orderNumber.Name = "orderNumber";
-            this.orderNumber.ReadOnly = true;
-            this.orderNumber.Width = 70;
-            // 
-            // dispatched
-            // 
-            this.dispatched.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dispatched.HeaderText = "Dispatched at";
-            this.dispatched.Name = "dispatched";
-            this.dispatched.ReadOnly = true;
-            this.dispatched.Width = 135;
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // confirmed
-            // 
-            this.confirmed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.confirmed.HeaderText = "Confirmed at";
-            this.confirmed.Name = "confirmed";
-            this.confirmed.ReadOnly = true;
-            this.confirmed.Width = 135;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Pharmacy.Properties.Resources.VIEWNOTE;
-            this.pictureBox1.Location = new System.Drawing.Point(606, 490);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // PharmacyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -673,13 +673,13 @@ namespace Pharmacy.UI
             ((System.ComponentModel.ISupportInitialize)(this.ordersDGV)).EndInit();
             this.history.ResumeLayout(false);
             this.history.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
