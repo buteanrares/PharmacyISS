@@ -47,18 +47,28 @@ namespace Pharmacy.UI
                     this.homePictureBox.BackColor = Color.LightGray;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.White;
+                    this.confirmationsPictureBox.BackColor = Color.LightGray;
                     break;
 
                 case 1:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.LightGray;
                     this.orderPictureBox.BackColor = Color.White;
+                    this.confirmationsPictureBox.BackColor = Color.LightGray;
                     break;
 
                 case 2:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.LightGray;
+                    this.confirmationsPictureBox.BackColor = Color.LightGray;
+                    break;
+
+                case 3:
+                    this.homePictureBox.BackColor = Color.White;
+                    this.storagePictureBox.BackColor = Color.White;
+                    this.orderPictureBox.BackColor = Color.White;
+                    this.confirmationsPictureBox.BackColor = Color.White;
                     break;
 
                 default:
@@ -72,6 +82,7 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.LightGray;
             this.storagePictureBox.BackColor = Color.White;
             this.orderPictureBox.BackColor = Color.White;
+            this.confirmationsPictureBox.BackColor = Color.White;
         }
 
         private void storagePictureBox_Click(object sender, EventArgs e)
@@ -80,6 +91,7 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.White;
             this.storagePictureBox.BackColor = Color.LightGray;
             this.orderPictureBox.BackColor = Color.White;
+            this.confirmationsPictureBox.BackColor = Color.White;
         }
 
         private void orderPictureBox_Click(object sender, EventArgs e)
@@ -88,11 +100,21 @@ namespace Pharmacy.UI
             this.homePictureBox.BackColor = Color.White;
             this.storagePictureBox.BackColor = Color.White;
             this.orderPictureBox.BackColor = Color.LightGray;
+            this.confirmationsPictureBox.BackColor = Color.White;
         }
 
         private void logoutPictureBox_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConfirmOrdersictureBox_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabControl.TabPages[3];
+            this.homePictureBox.BackColor = Color.White;
+            this.storagePictureBox.BackColor = Color.White;
+            this.orderPictureBox.BackColor = Color.White;
+            this.confirmationsPictureBox.BackColor = Color.LightGray;
         }
     }
 }

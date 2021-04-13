@@ -30,11 +30,14 @@
         {
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.loginButton = new System.Windows.Forms.Button();
             this.createAccountLabel = new System.Windows.Forms.Label();
             this.forgotPasswordLabel = new System.Windows.Forms.Label();
             this.loginPictureBox = new System.Windows.Forms.PictureBox();
+            this.loginButtonPB = new System.Windows.Forms.PictureBox();
+            this.exitPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButtonPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -57,18 +60,6 @@
             this.passwordTextBox.TabStop = false;
             this.passwordTextBox.Text = "Password";
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
-            // 
-            // loginButton
-            // 
-            this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loginButton.Location = new System.Drawing.Point(152, 329);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(109, 38);
-            this.loginButton.TabIndex = 2;
-            this.loginButton.Text = "Log in";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // createAccountLabel
             // 
@@ -104,15 +95,38 @@
             this.loginPictureBox.TabIndex = 5;
             this.loginPictureBox.TabStop = false;
             // 
+            // loginButtonPB
+            // 
+            this.loginButtonPB.Image = global::Pharmacy.Properties.Resources.LOGINBUTTON;
+            this.loginButtonPB.Location = new System.Drawing.Point(152, 329);
+            this.loginButtonPB.Name = "loginButtonPB";
+            this.loginButtonPB.Size = new System.Drawing.Size(109, 34);
+            this.loginButtonPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loginButtonPB.TabIndex = 6;
+            this.loginButtonPB.TabStop = false;
+            this.loginButtonPB.Click += new System.EventHandler(this.LoginButtonPictureBox_Click);
+            // 
+            // exitPictureBox
+            // 
+            this.exitPictureBox.Image = global::Pharmacy.Properties.Resources.X;
+            this.exitPictureBox.Location = new System.Drawing.Point(385, 7);
+            this.exitPictureBox.Name = "exitPictureBox";
+            this.exitPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.exitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitPictureBox.TabIndex = 7;
+            this.exitPictureBox.TabStop = false;
+            this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 454);
+            this.Controls.Add(this.exitPictureBox);
+            this.Controls.Add(this.loginButtonPB);
             this.Controls.Add(this.loginPictureBox);
             this.Controls.Add(this.forgotPasswordLabel);
             this.Controls.Add(this.createAccountLabel);
-            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -120,6 +134,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginButtonPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,9 +145,10 @@
 
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label createAccountLabel;
         private System.Windows.Forms.Label forgotPasswordLabel;
         private System.Windows.Forms.PictureBox loginPictureBox;
+        private System.Windows.Forms.PictureBox loginButtonPB;
+        private System.Windows.Forms.PictureBox exitPictureBox;
     }
 }
