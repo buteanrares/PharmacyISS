@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,27 @@ namespace Pharmacy
         public Login()
         {
             InitializeComponent();
+            connectToDatabase();
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             passwordTextBox.PasswordChar = '•';
+        }
+
+        private void connectToDatabase()
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Connection failed.");
+                //TODO: Create label and send a corresponding message
+            }
         }
 
         private void LoginButtonPictureBox_Click(object sender, EventArgs e)
@@ -31,13 +48,14 @@ namespace Pharmacy
             */
 
 
-            var UnitMenu = new UnitMenu();
-            UnitMenu.FormClosed += UnitMenu_FormClosed;
-            UnitMenu.Show();
+            //var UnitMenu = new UnitMenu();
+            //UnitMenu.FormClosed += UnitMenu_FormClosed;
+            //UnitMenu.Show();
 
-            //var PharmacyMenu = new PharmacyMenu();
-            //PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
-            //PharmacyMenu.Show();
+
+            var PharmacyMenu = new PharmacyMenu();
+            PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
+            PharmacyMenu.Show();
 
             this.Hide();
         }
