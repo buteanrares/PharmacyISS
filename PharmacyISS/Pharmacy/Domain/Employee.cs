@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pharmacy.Domain
 {
-    class Employee
+    abstract class Employee
     {
-        private int ID {get;set;}
-        private String Surname { get; set; }
-        private String Forename { get; set; }
-        private String WorkingUnit { get; set; }
+        protected int ID {get;set;}
+        protected String Surname { get; set; }
+        protected String Forename { get; set; }
+        protected DateTime HireDate { get; set; }
     }
 }
