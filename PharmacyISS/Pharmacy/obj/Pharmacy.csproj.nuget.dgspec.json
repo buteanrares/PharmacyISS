@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj": {}
+    "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj": {
+    "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+        "projectUniqueName": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
         "projectName": "Pharmacy",
-        "projectPath": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
-        "packagesPath": "C:\\Users\\butea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\obj\\",
+        "projectPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+        "packagesPath": "C:\\Users\\Rares\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\butea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rares\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"
@@ -63,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
