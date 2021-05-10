@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "Dapper/2.0.90": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -134,6 +143,24 @@
     }
   },
   "libraries": {
+    "Dapper/2.0.90": {
+      "sha512": "e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg==",
+      "type": "package",
+      "path": "dapper/2.0.90",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.90.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -450,23 +477,24 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Dapper >= 2.0.90",
       "System.Data.SqlClient >= 4.8.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\butea\\.nuget\\packages\\": {}
+    "C:\\Users\\Rares\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+      "projectUniqueName": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
       "projectName": "Pharmacy",
-      "projectPath": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
-      "packagesPath": "C:\\Users\\butea\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\butea\\VSProjects\\PharmacyISS\\PharmacyISS\\Pharmacy\\obj\\",
+      "projectPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+      "packagesPath": "C:\\Users\\Rares\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\butea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rares\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -492,6 +520,10 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.0.90, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.2, )"
@@ -515,7 +547,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
