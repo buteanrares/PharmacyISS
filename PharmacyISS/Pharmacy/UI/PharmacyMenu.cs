@@ -53,6 +53,14 @@ namespace Pharmacy.UI
                     this.historyPictureBox.BackColor = Color.LightGray;
                     break;
 
+                case 4:
+                    this.homePictureBox.BackColor = Color.White;
+                    this.storagePictureBox.BackColor = Color.White;
+                    this.orderPictureBox.BackColor = Color.White;
+                    this.historyPictureBox.BackColor = Color.White;
+                    this.AddMedicinePictureBox.BackColor = Color.LightGray;
+                    break;
+
                 default:
                     break;
             }
@@ -113,6 +121,16 @@ namespace Pharmacy.UI
             this.storagePictureBox.BackColor = Color.White;
             this.orderPictureBox.BackColor = Color.White;
             this.historyPictureBox.BackColor = Color.LightGray;
+        }
+
+        private void AddMedicinePictureBox_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tabControl.TabPages[4];
+            this.homePictureBox.BackColor = Color.White;
+            this.storagePictureBox.BackColor = Color.White;
+            this.orderPictureBox.BackColor = Color.White;
+            this.historyPictureBox.BackColor = Color.White;
+            this.AddMedicinePictureBox.BackColor = Color.LightGray;
         }
 
 
