@@ -43,7 +43,7 @@ namespace Pharmacy.Repository
             }
         }
 
-        public async Task DeleteRowAsync(Guid id)
+        public async Task DeleteRowAsync(int id)
         {
             using (var connection = CreateConnection())
             {
@@ -51,7 +51,7 @@ namespace Pharmacy.Repository
             }
         }
 
-        public async Task<T> GetAsync(Guid id)
+        public async Task<T> GetAsync(int id)
         {
             using (var connection = CreateConnection())
             {

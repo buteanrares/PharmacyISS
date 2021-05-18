@@ -17,5 +17,14 @@ namespace Pharmacy.Domain
     class UnitEmployee : Employee
     {
         private Units WorkingUnit { get; set; }
+
+        public UnitEmployee(int id, string surname, string forename, DateTime hiredate, Units workingunit)
+        {
+            this.ID = id;
+            this.Surname = surname;
+            this.Forename = forename;
+            this.HireDate = hiredate;
+            this.WorkingUnit = workingunit;
+        }
     }
 }

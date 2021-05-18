@@ -8,6 +8,6 @@ namespace Pharmacy.Domain
 {
     class Storage
     {
-        public Dictionary<int, int> stock { get;set; }
+        public Dictionary<Medicine, int> stock { get;set; }
     }
 }

@@ -12,5 +12,11 @@ namespace Pharmacy.Domain
         public string Name { get; set; }
         public int packSize { get; set; }
 
+        public Medicine(int id, string name, int packsize)
+        {
+            this.ID = id;
+            this.Name = name;
+            this.packSize = packSize;
+        }
     }
 }
