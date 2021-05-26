@@ -61,6 +61,7 @@ namespace Pharmacy.UI
             this.O_searchTextBox = new System.Windows.Forms.TextBox();
             this.O_searchLabel = new System.Windows.Forms.Label();
             this.ordersDGV = new System.Windows.Forms.DataGridView();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.issuedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -383,6 +384,7 @@ namespace Pharmacy.UI
             this.declinePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.declinePictureBox.TabIndex = 10;
             this.declinePictureBox.TabStop = false;
+            this.declinePictureBox.Click += new System.EventHandler(this.declinePictureBox_Click);
             // 
             // confirmPictureBox
             // 
@@ -394,6 +396,7 @@ namespace Pharmacy.UI
             this.confirmPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.confirmPictureBox.TabIndex = 9;
             this.confirmPictureBox.TabStop = false;
+            this.confirmPictureBox.Click += new System.EventHandler(this.confirmPictureBox_Click);
             // 
             // label10
             // 
@@ -460,6 +463,7 @@ namespace Pharmacy.UI
             this.ordersDGV.BackgroundColor = System.Drawing.SystemColors.Window;
             this.ordersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Number,
             this.dataGridViewTextBoxColumn1,
             this.issuedBy,
             this.priority,
@@ -471,19 +475,26 @@ namespace Pharmacy.UI
             this.ordersDGV.Size = new System.Drawing.Size(458, 150);
             this.ordersDGV.TabIndex = 2;
             // 
+            // Number
+            // 
+            this.Number.HeaderText = "Number";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 70;
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.HeaderText = "Unit";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 90;
             // 
             // issuedBy
             // 
-            this.issuedBy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.issuedBy.HeaderText = "Issued by";
             this.issuedBy.Name = "issuedBy";
             this.issuedBy.ReadOnly = true;
+            this.issuedBy.Width = 85;
             // 
             // priority
             // 
@@ -491,7 +502,7 @@ namespace Pharmacy.UI
             this.priority.HeaderText = "Priority";
             this.priority.Name = "priority";
             this.priority.ReadOnly = true;
-            this.priority.Width = 80;
+            this.priority.Width = 60;
             // 
             // totalQuantity
             // 
@@ -895,10 +906,6 @@ namespace Pharmacy.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.TextBox O_searchTextBox;
         private System.Windows.Forms.Label O_searchLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
         private System.Windows.Forms.PictureBox declinePictureBox;
         private System.Windows.Forms.PictureBox confirmPictureBox;
         private System.Windows.Forms.TabPage history;
@@ -928,5 +935,10 @@ namespace Pharmacy.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn packSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn availability;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
     }
 }

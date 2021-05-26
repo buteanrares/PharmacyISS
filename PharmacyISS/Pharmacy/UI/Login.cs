@@ -27,7 +27,7 @@ namespace Pharmacy
 
         private void connectToDatabase()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\Database\PharmacyDB.mdf;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

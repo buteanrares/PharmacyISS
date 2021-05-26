@@ -224,5 +224,15 @@ namespace Pharmacy.UI
         {
             LoadHistory(H_searchTextBox.Text);
         }
+
+        private void declinePictureBox_Click(object sender, EventArgs e)
+        {
+            // TODO : Implement this
+        }
+
+        private void confirmPictureBox_Click(object sender, EventArgs e)
+        {
+            // TODO : Implement this
+        }
     }
 }
