@@ -33,31 +33,34 @@ namespace Pharmacy
             {
                 connection.Open();
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                Console.WriteLine("Connection failed.");
-                //TODO: Create label and send a corresponding message
+                this.errorLabel.Text += "Cannot connect to database. ";
             }
         }
 
         private void LoginButtonPictureBox_Click(object sender, EventArgs e)
         {
-            /*
-                IF Login credentials.....
-                IF unit / pharmacy employee...
-            */
+            // Account LogInAccount = this.Service.ReadAccount("username","password");
 
-
-            //var UnitMenu = new UnitMenu();
-            //UnitMenu.FormClosed += UnitMenu_FormClosed;
-            //UnitMenu.Show();
-
-
-            var PharmacyMenu = new PharmacyMenu();
-            PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
-            PharmacyMenu.Show();
-
-            this.Hide();
+            if (usernameTextBox.Text.Equals("unit"))
+            {
+                var UnitMenu = new UnitMenu();
+                UnitMenu.FormClosed += UnitMenu_FormClosed;
+                UnitMenu.Show();
+                this.Hide();
+            }
+            else if (usernameTextBox.Text.Equals("pharm"))
+            {
+                var PharmacyMenu = new PharmacyMenu();
+                PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
+                PharmacyMenu.Show();
+                this.Hide();
+            }
+            else
+            {
+                this.errorLabel.Text += "Invalid credentials. ";
+            }
         }
 
         private void UnitMenu_FormClosed(object sender, FormClosedEventArgs e)

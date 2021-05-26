@@ -35,6 +35,7 @@
             this.loginPictureBox = new System.Windows.Forms.PictureBox();
             this.loginButtonPB = new System.Windows.Forms.PictureBox();
             this.exitPictureBox = new System.Windows.Forms.PictureBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginButtonPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exitPictureBox)).BeginInit();
@@ -97,6 +98,7 @@
             // 
             // loginButtonPB
             // 
+            this.loginButtonPB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButtonPB.Image = global::Pharmacy.Properties.Resources.LOGINBUTTON;
             this.loginButtonPB.Location = new System.Drawing.Point(152, 329);
             this.loginButtonPB.Name = "loginButtonPB";
@@ -108,6 +110,7 @@
             // 
             // exitPictureBox
             // 
+            this.exitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitPictureBox.Image = global::Pharmacy.Properties.Resources.X;
             this.exitPictureBox.Location = new System.Drawing.Point(385, 7);
             this.exitPictureBox.Name = "exitPictureBox";
@@ -117,11 +120,24 @@
             this.exitPictureBox.TabStop = false;
             this.exitPictureBox.Click += new System.EventHandler(this.exitPictureBox_Click);
             // 
+            // errorLabel
+            // 
+            this.errorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.errorLabel.ForeColor = System.Drawing.Color.Firebrick;
+            this.errorLabel.Location = new System.Drawing.Point(83, 385);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 17);
+            this.errorLabel.TabIndex = 8;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 454);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.exitPictureBox);
             this.Controls.Add(this.loginButtonPB);
             this.Controls.Add(this.loginPictureBox);
@@ -150,5 +166,6 @@
         private System.Windows.Forms.PictureBox loginPictureBox;
         private System.Windows.Forms.PictureBox loginButtonPB;
         private System.Windows.Forms.PictureBox exitPictureBox;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

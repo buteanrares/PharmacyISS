@@ -17,9 +17,9 @@ namespace Pharmacy.Service
             this.MedicineRepository = new MedicineRepository();
         }
 
-        public async Task Create(int id, string name, int packsize)
+        public async Task Create(int id, string name, int packsize, int quantity, DateTime expirationdate)
         {
-            await this.MedicineRepository.InsertAsync(new Medicine(id, name, packsize));
+            await this.MedicineRepository.InsertAsync(new Medicine(id, name, packsize, quantity, expirationdate));
         }
 
         public async Task<Medicine> Read(int id)
@@ -32,9 +32,9 @@ namespace Pharmacy.Service
             return await MedicineRepository.GetAllAsync();
         }
 
-        public async Task Update(int id, string name, int packsize)
+        public async Task Update(int id, string name, int packsize, int quantity, DateTime expirationdate)
         {
-            await this.MedicineRepository.UpdateAsync(new Medicine(id, name, packsize));
+            await this.MedicineRepository.UpdateAsync(new Medicine(id, name, packsize, quantity, expirationdate));
         }
 
         public async Task Delete(int id)
