@@ -10,13 +10,17 @@ namespace Pharmacy.Domain
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int packSize { get; set; }
+        public int PackSize { get; set; }
+        public int Quantity { get; set; }
+        public DateTime ExpirationDate { get; set; }
 
-        public Medicine(int id, string name, int packsize)
+        public Medicine(int id, string name, int packsize, int quantity, DateTime expirationdate)
         {
             this.ID = id;
             this.Name = name;
-            this.packSize = packSize;
+            this.PackSize = packsize;
+            this.Quantity = quantity;
+            this.ExpirationDate = expirationdate;
         }
     }
 }

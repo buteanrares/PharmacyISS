@@ -487,11 +487,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+      "projectUniqueName": "C:\\Users\\Rares\\Projects\\CSharp\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
       "projectName": "Pharmacy",
-      "projectPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+      "projectPath": "C:\\Users\\Rares\\Projects\\CSharp\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
       "packagesPath": "C:\\Users\\Rares\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\obj\\",
+      "outputPath": "C:\\Users\\Rares\\Projects\\CSharp\\Pharmacy\\PharmacyISS\\Pharmacy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rares\\AppData\\Roaming\\NuGet\\NuGet.Config",

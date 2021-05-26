@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LIAUsxWfKKRIVzyKtufxanmdrUIzSAnXraGnIEAuX+dVR77YJsQlzhtyFXTJGqvUqmrYAcwDdalU8e/Az47hXw==",
+  "dgSpecHash": "3iZYZRZQniNABrc5O04OHm4BWmaId7V6mSRxHzVF1jWc215KxOZF6m+emLHV3dh98T1kOC9QzUyhSVKwj31LcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rares\\Projects\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
+  "projectFilePath": "C:\\Users\\Rares\\Projects\\CSharp\\Pharmacy\\PharmacyISS\\Pharmacy\\Pharmacy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rares\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Rares\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
