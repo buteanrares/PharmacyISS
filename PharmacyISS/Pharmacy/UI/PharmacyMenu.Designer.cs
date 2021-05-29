@@ -43,13 +43,11 @@ namespace Pharmacy.UI
             this.loggedInInfoLabel = new System.Windows.Forms.Label();
             this.homeLabel = new System.Windows.Forms.Label();
             this.stock = new System.Windows.Forms.TabPage();
+            this.RemovePictureBox = new System.Windows.Forms.PictureBox();
+            this.UpdatePictureBox = new System.Windows.Forms.PictureBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.S_searchLabel = new System.Windows.Forms.Label();
             this.storageDGV = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.packSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.storageLabel = new System.Windows.Forms.Label();
             this.order = new System.Windows.Forms.TabPage();
             this.declinePictureBox = new System.Windows.Forms.PictureBox();
@@ -80,7 +78,7 @@ namespace Pharmacy.UI
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ExpirationDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddPictureBox = new System.Windows.Forms.PictureBox();
-            this.StockNumberNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.QuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PackSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.ExpirationDateLabel = new System.Windows.Forms.Label();
@@ -96,9 +94,16 @@ namespace Pharmacy.UI
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historyPictureBox = new System.Windows.Forms.PictureBox();
             this.AddMedicinePictureBox = new System.Windows.Forms.PictureBox();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.packSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdatePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDGV)).BeginInit();
             this.order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.declinePictureBox)).BeginInit();
@@ -110,7 +115,7 @@ namespace Pharmacy.UI
             ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StockNumberNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PackSizeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
@@ -234,11 +239,11 @@ namespace Pharmacy.UI
             // 
             this.unitInfoLabel.AutoSize = true;
             this.unitInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.unitInfoLabel.Location = new System.Drawing.Point(143, 195);
+            this.unitInfoLabel.Location = new System.Drawing.Point(150, 194);
             this.unitInfoLabel.Name = "unitInfoLabel";
-            this.unitInfoLabel.Size = new System.Drawing.Size(42, 24);
+            this.unitInfoLabel.Size = new System.Drawing.Size(47, 24);
             this.unitInfoLabel.TabIndex = 2;
-            this.unitInfoLabel.Text = "Unit";
+            this.unitInfoLabel.Text = "Unit ";
             // 
             // loggedInInfoLabel
             // 
@@ -262,6 +267,8 @@ namespace Pharmacy.UI
             // 
             // stock
             // 
+            this.stock.Controls.Add(this.RemovePictureBox);
+            this.stock.Controls.Add(this.UpdatePictureBox);
             this.stock.Controls.Add(this.SearchTextBox);
             this.stock.Controls.Add(this.S_searchLabel);
             this.stock.Controls.Add(this.storageDGV);
@@ -273,6 +280,30 @@ namespace Pharmacy.UI
             this.stock.TabIndex = 1;
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
+            // 
+            // RemovePictureBox
+            // 
+            this.RemovePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RemovePictureBox.Image = global::Pharmacy.Properties.Resources.REMOVE;
+            this.RemovePictureBox.Location = new System.Drawing.Point(178, 490);
+            this.RemovePictureBox.Name = "RemovePictureBox";
+            this.RemovePictureBox.Size = new System.Drawing.Size(100, 29);
+            this.RemovePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RemovePictureBox.TabIndex = 6;
+            this.RemovePictureBox.TabStop = false;
+            this.RemovePictureBox.Click += new System.EventHandler(this.RemovePictureBox_Click);
+            // 
+            // UpdatePictureBox
+            // 
+            this.UpdatePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdatePictureBox.Image = global::Pharmacy.Properties.Resources.UPDATE1;
+            this.UpdatePictureBox.Location = new System.Drawing.Point(59, 490);
+            this.UpdatePictureBox.Name = "UpdatePictureBox";
+            this.UpdatePictureBox.Size = new System.Drawing.Size(100, 29);
+            this.UpdatePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UpdatePictureBox.TabIndex = 5;
+            this.UpdatePictureBox.TabStop = false;
+            this.UpdatePictureBox.Click += new System.EventHandler(this.UpdatePictureBox_Click);
             // 
             // SearchTextBox
             // 
@@ -302,49 +333,16 @@ namespace Pharmacy.UI
             this.name,
             this.packSize,
             this.availability,
-            this.ExpirationDate});
+            this.ExpirationDate,
+            this.ID});
             this.storageDGV.Location = new System.Drawing.Point(59, 168);
             this.storageDGV.Name = "storageDGV";
             this.storageDGV.ReadOnly = true;
+            this.storageDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.storageDGV.RowTemplate.Height = 25;
+            this.storageDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.storageDGV.Size = new System.Drawing.Size(462, 302);
             this.storageDGV.TabIndex = 2;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.name.FillWeight = 67.68189F;
-            this.name.HeaderText = "Medicine";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.name.Width = 123;
-            // 
-            // packSize
-            // 
-            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.packSize.FillWeight = 196.9543F;
-            this.packSize.HeaderText = "Pack size";
-            this.packSize.Name = "packSize";
-            this.packSize.ReadOnly = true;
-            this.packSize.Width = 85;
-            // 
-            // availability
-            // 
-            this.availability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.availability.FillWeight = 95.55091F;
-            this.availability.HeaderText = "Availability";
-            this.availability.Name = "availability";
-            this.availability.ReadOnly = true;
-            this.availability.Width = 95;
-            // 
-            // ExpirationDate
-            // 
-            this.ExpirationDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExpirationDate.FillWeight = 39.81287F;
-            this.ExpirationDate.HeaderText = "Expiration date";
-            this.ExpirationDate.Name = "ExpirationDate";
-            this.ExpirationDate.ReadOnly = true;
             // 
             // storageLabel
             // 
@@ -420,7 +418,9 @@ namespace Pharmacy.UI
             this.orderDetailsDGV.Location = new System.Drawing.Point(59, 388);
             this.orderDetailsDGV.Name = "orderDetailsDGV";
             this.orderDetailsDGV.ReadOnly = true;
+            this.orderDetailsDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.orderDetailsDGV.RowTemplate.Height = 25;
+            this.orderDetailsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orderDetailsDGV.Size = new System.Drawing.Size(458, 150);
             this.orderDetailsDGV.TabIndex = 7;
             // 
@@ -469,9 +469,12 @@ namespace Pharmacy.UI
             this.priority,
             this.totalQuantity});
             this.ordersDGV.Location = new System.Drawing.Point(59, 168);
+            this.ordersDGV.MultiSelect = false;
             this.ordersDGV.Name = "ordersDGV";
             this.ordersDGV.ReadOnly = true;
+            this.ordersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ordersDGV.RowTemplate.Height = 25;
+            this.ordersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ordersDGV.Size = new System.Drawing.Size(458, 150);
             this.ordersDGV.TabIndex = 2;
             // 
@@ -576,7 +579,9 @@ namespace Pharmacy.UI
             this.historyDGV.Location = new System.Drawing.Point(59, 168);
             this.historyDGV.Name = "historyDGV";
             this.historyDGV.ReadOnly = true;
+            this.historyDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.historyDGV.RowTemplate.Height = 25;
+            this.historyDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.historyDGV.Size = new System.Drawing.Size(462, 302);
             this.historyDGV.TabIndex = 6;
             // 
@@ -625,7 +630,7 @@ namespace Pharmacy.UI
             // 
             this.tabPage1.Controls.Add(this.ExpirationDateTimePicker);
             this.tabPage1.Controls.Add(this.AddPictureBox);
-            this.tabPage1.Controls.Add(this.StockNumberNumericUpDown);
+            this.tabPage1.Controls.Add(this.QuantityNumericUpDown);
             this.tabPage1.Controls.Add(this.PackSizeNumericUpDown);
             this.tabPage1.Controls.Add(this.QuantityLabel);
             this.tabPage1.Controls.Add(this.ExpirationDateLabel);
@@ -660,18 +665,19 @@ namespace Pharmacy.UI
             this.AddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddPictureBox.TabIndex = 19;
             this.AddPictureBox.TabStop = false;
+            this.AddPictureBox.Click += new System.EventHandler(this.AddPictureBox_Click);
             // 
-            // StockNumberNumericUpDown
+            // QuantityNumericUpDown
             // 
-            this.StockNumberNumericUpDown.Location = new System.Drawing.Point(214, 238);
-            this.StockNumberNumericUpDown.Maximum = new decimal(new int[] {
+            this.QuantityNumericUpDown.Location = new System.Drawing.Point(214, 238);
+            this.QuantityNumericUpDown.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.StockNumberNumericUpDown.Name = "StockNumberNumericUpDown";
-            this.StockNumberNumericUpDown.Size = new System.Drawing.Size(146, 23);
-            this.StockNumberNumericUpDown.TabIndex = 18;
+            this.QuantityNumericUpDown.Name = "QuantityNumericUpDown";
+            this.QuantityNumericUpDown.Size = new System.Drawing.Size(146, 23);
+            this.QuantityNumericUpDown.TabIndex = 18;
             // 
             // PackSizeNumericUpDown
             // 
@@ -824,6 +830,49 @@ namespace Pharmacy.UI
             this.AddMedicinePictureBox.TabStop = false;
             this.AddMedicinePictureBox.Click += new System.EventHandler(this.AddMedicinePictureBox_Click);
             // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.name.FillWeight = 67.68189F;
+            this.name.HeaderText = "Medicine";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.name.Width = 123;
+            // 
+            // packSize
+            // 
+            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.packSize.FillWeight = 196.9543F;
+            this.packSize.HeaderText = "Pack size";
+            this.packSize.Name = "packSize";
+            this.packSize.ReadOnly = true;
+            this.packSize.Width = 85;
+            // 
+            // availability
+            // 
+            this.availability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.availability.FillWeight = 95.55091F;
+            this.availability.HeaderText = "Availability";
+            this.availability.Name = "availability";
+            this.availability.ReadOnly = true;
+            this.availability.Width = 95;
+            // 
+            // ExpirationDate
+            // 
+            this.ExpirationDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ExpirationDate.FillWeight = 39.81287F;
+            this.ExpirationDate.HeaderText = "Expiration date";
+            this.ExpirationDate.Name = "ExpirationDate";
+            this.ExpirationDate.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // PharmacyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -846,6 +895,8 @@ namespace Pharmacy.UI
             this.home.PerformLayout();
             this.stock.ResumeLayout(false);
             this.stock.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RemovePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdatePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageDGV)).EndInit();
             this.order.ResumeLayout(false);
             this.order.PerformLayout();
@@ -860,7 +911,7 @@ namespace Pharmacy.UI
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StockNumberNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PackSizeNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
@@ -922,7 +973,7 @@ namespace Pharmacy.UI
         private System.Windows.Forms.PictureBox AddMedicinePictureBox;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label AddMedicineLabel;
-        private System.Windows.Forms.NumericUpDown StockNumberNumericUpDown;
+        private System.Windows.Forms.NumericUpDown QuantityNumericUpDown;
         private System.Windows.Forms.NumericUpDown PackSizeNumericUpDown;
         private System.Windows.Forms.Label QuantityLabel;
         private System.Windows.Forms.Label ExpirationDateLabel;
@@ -931,14 +982,17 @@ namespace Pharmacy.UI
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.DateTimePicker ExpirationDateTimePicker;
         private System.Windows.Forms.PictureBox AddPictureBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn packSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn availability;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
         private System.Windows.Forms.DataGridViewTextBoxColumn priority;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
+        private System.Windows.Forms.PictureBox RemovePictureBox;
+        private System.Windows.Forms.PictureBox UpdatePictureBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn packSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn availability;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

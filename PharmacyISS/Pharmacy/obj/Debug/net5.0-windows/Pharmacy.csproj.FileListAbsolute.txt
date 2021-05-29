@@ -68,7 +68,6 @@ C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-wi
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.csprojAssemblyReference.cache
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.Properties.Resources.resources
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.Login.resources
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.UI.PharmacyMenu.resources
@@ -83,3 +82,4 @@ C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-wi
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\ref\Pharmacy.dll
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.pdb
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.genruntimeconfig.cache
+C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.csproj.AssemblyReference.cache

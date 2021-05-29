@@ -33,41 +33,44 @@ namespace Pharmacy.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnitMenu));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.home = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.homeLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.NotificationLabel3 = new System.Windows.Forms.Label();
+            this.HomeLabel = new System.Windows.Forms.Label();
+            this.NotificationLabel2 = new System.Windows.Forms.Label();
             this.loggedInInfoLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NotificationLabel1 = new System.Windows.Forms.Label();
             this.unitInfoLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.WorkingUnitLabel = new System.Windows.Forms.Label();
             this.notificationsInfoLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.stock = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.StorageAddPictureBox = new System.Windows.Forms.PictureBox();
+            this.StorageSearchTextBox = new System.Windows.Forms.TextBox();
+            this.StorageSearchLabel = new System.Windows.Forms.Label();
+            this.StorageDGV = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.packSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PharmacyStorageLabel = new System.Windows.Forms.Label();
             this.order = new System.Windows.Forms.TabPage();
             this.removeMedicinePictureBox = new System.Windows.Forms.PictureBox();
             this.confirmOrderPictureBox = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.PriorityComboBox = new System.Windows.Forms.ComboBox();
+            this.PriorityLabel = new System.Windows.Forms.Label();
+            this.OrderDGV = new System.Windows.Forms.DataGridView();
             this.orderMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderSearchTextBox = new System.Windows.Forms.TextBox();
+            this.OrderSearchLabel = new System.Windows.Forms.Label();
+            this.OrderLabel = new System.Windows.Forms.Label();
             this.confirmations = new System.Windows.Forms.TabPage();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ConfirmOrderArrivalPictureBox = new System.Windows.Forms.PictureBox();
             this.H_searchTextBox = new System.Windows.Forms.TextBox();
             this.H_searchLabel = new System.Windows.Forms.Label();
-            this.historyDGV = new System.Windows.Forms.DataGridView();
-            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatchedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatchedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConfirmationsDGV = new System.Windows.Forms.DataGridView();
             this.confirmationsLabel = new System.Windows.Forms.Label();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.logoutPictureBox = new System.Windows.Forms.PictureBox();
@@ -75,22 +78,23 @@ namespace Pharmacy.UI
             this.storagePictureBox = new System.Windows.Forms.PictureBox();
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.confirmationsPictureBox = new System.Windows.Forms.PictureBox();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.packSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispatchedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispatchedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StorageAddPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StorageDGV)).BeginInit();
             this.order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.removeMedicinePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmOrderPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderDGV)).BeginInit();
             this.confirmations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmOrderArrivalPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmationsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).BeginInit();
@@ -119,13 +123,13 @@ namespace Pharmacy.UI
             // 
             // home
             // 
-            this.home.Controls.Add(this.label4);
-            this.home.Controls.Add(this.homeLabel);
-            this.home.Controls.Add(this.label3);
+            this.home.Controls.Add(this.NotificationLabel3);
+            this.home.Controls.Add(this.HomeLabel);
+            this.home.Controls.Add(this.NotificationLabel2);
             this.home.Controls.Add(this.loggedInInfoLabel);
-            this.home.Controls.Add(this.label2);
+            this.home.Controls.Add(this.NotificationLabel1);
             this.home.Controls.Add(this.unitInfoLabel);
-            this.home.Controls.Add(this.label1);
+            this.home.Controls.Add(this.WorkingUnitLabel);
             this.home.Controls.Add(this.notificationsInfoLabel);
             this.home.Controls.Add(this.usernameLabel);
             this.home.Location = new System.Drawing.Point(79, 4);
@@ -136,36 +140,36 @@ namespace Pharmacy.UI
             this.home.Text = "Home";
             this.home.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // NotificationLabel3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(75, 397);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(642, 19);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Order number 82362 has been accepted by the pharmacy and waiting for confirmation" +
+            this.NotificationLabel3.AutoSize = true;
+            this.NotificationLabel3.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NotificationLabel3.Location = new System.Drawing.Point(75, 397);
+            this.NotificationLabel3.Name = "NotificationLabel3";
+            this.NotificationLabel3.Size = new System.Drawing.Size(642, 19);
+            this.NotificationLabel3.TabIndex = 17;
+            this.NotificationLabel3.Text = "Order number 82362 has been accepted by the pharmacy and waiting for confirmation" +
     ".";
             // 
-            // homeLabel
+            // HomeLabel
             // 
-            this.homeLabel.AutoSize = true;
-            this.homeLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.homeLabel.Location = new System.Drawing.Point(29, 30);
-            this.homeLabel.Name = "homeLabel";
-            this.homeLabel.Size = new System.Drawing.Size(168, 64);
-            this.homeLabel.TabIndex = 9;
-            this.homeLabel.Text = "Home";
+            this.HomeLabel.AutoSize = true;
+            this.HomeLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.HomeLabel.Location = new System.Drawing.Point(29, 30);
+            this.HomeLabel.Name = "HomeLabel";
+            this.HomeLabel.Size = new System.Drawing.Size(168, 64);
+            this.HomeLabel.TabIndex = 9;
+            this.HomeLabel.Text = "Home";
             // 
-            // label3
+            // NotificationLabel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(75, 369);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(641, 19);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Order number 26970 has been accepted by the pharmacy and waiting for confirmation" +
+            this.NotificationLabel2.AutoSize = true;
+            this.NotificationLabel2.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NotificationLabel2.Location = new System.Drawing.Point(75, 369);
+            this.NotificationLabel2.Name = "NotificationLabel2";
+            this.NotificationLabel2.Size = new System.Drawing.Size(641, 19);
+            this.NotificationLabel2.TabIndex = 16;
+            this.NotificationLabel2.Text = "Order number 26970 has been accepted by the pharmacy and waiting for confirmation" +
     ".";
             // 
             // loggedInInfoLabel
@@ -178,35 +182,35 @@ namespace Pharmacy.UI
             this.loggedInInfoLabel.TabIndex = 10;
             this.loggedInInfoLabel.Text = "Logged in as";
             // 
-            // label2
+            // NotificationLabel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(75, 341);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(609, 19);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Order number 19231 has been refused by the pharmacy. (optional: due to -reason-)";
+            this.NotificationLabel1.AutoSize = true;
+            this.NotificationLabel1.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NotificationLabel1.Location = new System.Drawing.Point(75, 341);
+            this.NotificationLabel1.Name = "NotificationLabel1";
+            this.NotificationLabel1.Size = new System.Drawing.Size(609, 19);
+            this.NotificationLabel1.TabIndex = 15;
+            this.NotificationLabel1.Text = "Order number 19231 has been refused by the pharmacy. (optional: due to -reason-)";
             // 
             // unitInfoLabel
             // 
             this.unitInfoLabel.AutoSize = true;
-            this.unitInfoLabel.Font = new System.Drawing.Font("Fira Mono", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.unitInfoLabel.Location = new System.Drawing.Point(137, 187);
+            this.unitInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.unitInfoLabel.Location = new System.Drawing.Point(144, 186);
             this.unitInfoLabel.Name = "unitInfoLabel";
-            this.unitInfoLabel.Size = new System.Drawing.Size(54, 23);
+            this.unitInfoLabel.Size = new System.Drawing.Size(47, 24);
             this.unitInfoLabel.TabIndex = 11;
-            this.unitInfoLabel.Text = "Unit";
+            this.unitInfoLabel.Text = "Unit ";
             // 
-            // label1
+            // WorkingUnitLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(197, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 19);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "userWorkingUnit";
+            this.WorkingUnitLabel.AutoSize = true;
+            this.WorkingUnitLabel.Font = new System.Drawing.Font("Fira Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WorkingUnitLabel.Location = new System.Drawing.Point(197, 190);
+            this.WorkingUnitLabel.Name = "WorkingUnitLabel";
+            this.WorkingUnitLabel.Size = new System.Drawing.Size(129, 19);
+            this.WorkingUnitLabel.TabIndex = 14;
+            this.WorkingUnitLabel.Text = "userWorkingUnit";
             // 
             // notificationsInfoLabel
             // 
@@ -230,11 +234,11 @@ namespace Pharmacy.UI
             // 
             // stock
             // 
-            this.stock.Controls.Add(this.pictureBox1);
-            this.stock.Controls.Add(this.textBox1);
-            this.stock.Controls.Add(this.label6);
-            this.stock.Controls.Add(this.dataGridView1);
-            this.stock.Controls.Add(this.label5);
+            this.stock.Controls.Add(this.StorageAddPictureBox);
+            this.stock.Controls.Add(this.StorageSearchTextBox);
+            this.stock.Controls.Add(this.StorageSearchLabel);
+            this.stock.Controls.Add(this.StorageDGV);
+            this.stock.Controls.Add(this.PharmacyStorageLabel);
             this.stock.Location = new System.Drawing.Point(79, 4);
             this.stock.Name = "stock";
             this.stock.Padding = new System.Windows.Forms.Padding(3);
@@ -243,70 +247,114 @@ namespace Pharmacy.UI
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // StorageAddPictureBox
             // 
-            this.pictureBox1.Image = global::Pharmacy.Properties.Resources.ADD;
-            this.pictureBox1.Location = new System.Drawing.Point(415, 131);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.StorageAddPictureBox.Image = global::Pharmacy.Properties.Resources.ADD;
+            this.StorageAddPictureBox.Location = new System.Drawing.Point(433, 131);
+            this.StorageAddPictureBox.Name = "StorageAddPictureBox";
+            this.StorageAddPictureBox.Size = new System.Drawing.Size(100, 31);
+            this.StorageAddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.StorageAddPictureBox.TabIndex = 15;
+            this.StorageAddPictureBox.TabStop = false;
+            this.StorageAddPictureBox.Click += new System.EventHandler(this.StorageAddPictureBox_Click);
             // 
-            // textBox1
+            // StorageSearchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 23);
-            this.textBox1.TabIndex = 8;
+            this.StorageSearchTextBox.Location = new System.Drawing.Point(132, 133);
+            this.StorageSearchTextBox.Name = "StorageSearchTextBox";
+            this.StorageSearchTextBox.Size = new System.Drawing.Size(146, 23);
+            this.StorageSearchTextBox.TabIndex = 8;
+            this.StorageSearchTextBox.TextChanged += new System.EventHandler(this.StorageSearchTextBox_TextChanged);
             // 
-            // label6
+            // StorageSearchLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(59, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 23);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Search";
+            this.StorageSearchLabel.AutoSize = true;
+            this.StorageSearchLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.StorageSearchLabel.Location = new System.Drawing.Point(59, 133);
+            this.StorageSearchLabel.Name = "StorageSearchLabel";
+            this.StorageSearchLabel.Size = new System.Drawing.Size(67, 23);
+            this.StorageSearchLabel.TabIndex = 7;
+            this.StorageSearchLabel.Text = "Search";
             // 
-            // dataGridView1
+            // StorageDGV
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StorageDGV.AllowUserToAddRows = false;
+            this.StorageDGV.AllowUserToDeleteRows = false;
+            this.StorageDGV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.StorageDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StorageDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.packSize,
-            this.stockStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(59, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(456, 284);
-            this.dataGridView1.TabIndex = 6;
+            this.ExpirationDate,
+            this.availability,
+            this.ID});
+            this.StorageDGV.Location = new System.Drawing.Point(59, 168);
+            this.StorageDGV.Name = "StorageDGV";
+            this.StorageDGV.ReadOnly = true;
+            this.StorageDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.StorageDGV.RowTemplate.Height = 25;
+            this.StorageDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.StorageDGV.Size = new System.Drawing.Size(474, 284);
+            this.StorageDGV.TabIndex = 6;
             // 
-            // label5
+            // name
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(29, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(455, 64);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Pharmacy storage";
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.name.HeaderText = "Medicine";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.name.Width = 140;
+            // 
+            // packSize
+            // 
+            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.packSize.HeaderText = "Pack size";
+            this.packSize.Name = "packSize";
+            this.packSize.ReadOnly = true;
+            this.packSize.Width = 80;
+            // 
+            // ExpirationDate
+            // 
+            this.ExpirationDate.HeaderText = "Expiration date";
+            this.ExpirationDate.Name = "ExpirationDate";
+            this.ExpirationDate.ReadOnly = true;
+            this.ExpirationDate.Width = 116;
+            // 
+            // availability
+            // 
+            this.availability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.availability.HeaderText = "Availability";
+            this.availability.Name = "availability";
+            this.availability.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // PharmacyStorageLabel
+            // 
+            this.PharmacyStorageLabel.AutoSize = true;
+            this.PharmacyStorageLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.PharmacyStorageLabel.Location = new System.Drawing.Point(29, 30);
+            this.PharmacyStorageLabel.Name = "PharmacyStorageLabel";
+            this.PharmacyStorageLabel.Size = new System.Drawing.Size(455, 64);
+            this.PharmacyStorageLabel.TabIndex = 5;
+            this.PharmacyStorageLabel.Text = "Pharmacy storage";
             // 
             // order
             // 
             this.order.Controls.Add(this.removeMedicinePictureBox);
             this.order.Controls.Add(this.confirmOrderPictureBox);
-            this.order.Controls.Add(this.comboBox1);
-            this.order.Controls.Add(this.label9);
-            this.order.Controls.Add(this.dataGridView3);
-            this.order.Controls.Add(this.textBox2);
-            this.order.Controls.Add(this.label8);
-            this.order.Controls.Add(this.label7);
+            this.order.Controls.Add(this.PriorityComboBox);
+            this.order.Controls.Add(this.PriorityLabel);
+            this.order.Controls.Add(this.OrderDGV);
+            this.order.Controls.Add(this.OrderSearchTextBox);
+            this.order.Controls.Add(this.OrderSearchLabel);
+            this.order.Controls.Add(this.OrderLabel);
             this.order.Location = new System.Drawing.Point(79, 4);
             this.order.Name = "order";
             this.order.Padding = new System.Windows.Forms.Padding(3);
@@ -324,6 +372,7 @@ namespace Pharmacy.UI
             this.removeMedicinePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.removeMedicinePictureBox.TabIndex = 14;
             this.removeMedicinePictureBox.TabStop = false;
+            this.removeMedicinePictureBox.Click += new System.EventHandler(this.removeMedicinePictureBox_Click);
             // 
             // confirmOrderPictureBox
             // 
@@ -334,91 +383,107 @@ namespace Pharmacy.UI
             this.confirmOrderPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.confirmOrderPictureBox.TabIndex = 13;
             this.confirmOrderPictureBox.TabStop = false;
+            this.confirmOrderPictureBox.Click += new System.EventHandler(this.confirmOrderPictureBox_Click);
             // 
-            // comboBox1
+            // PriorityComboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Fira Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.PriorityComboBox.Font = new System.Drawing.Font("Fira Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PriorityComboBox.FormattingEnabled = true;
+            this.PriorityComboBox.Items.AddRange(new object[] {
             "Low",
             "Normal",
             "High"});
-            this.comboBox1.Location = new System.Drawing.Point(137, 475);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 12;
+            this.PriorityComboBox.Location = new System.Drawing.Point(137, 475);
+            this.PriorityComboBox.Name = "PriorityComboBox";
+            this.PriorityComboBox.Size = new System.Drawing.Size(121, 22);
+            this.PriorityComboBox.TabIndex = 12;
             // 
-            // label9
+            // PriorityLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(59, 475);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 23);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Priority";
+            this.PriorityLabel.AutoSize = true;
+            this.PriorityLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.PriorityLabel.Location = new System.Drawing.Point(59, 475);
+            this.PriorityLabel.Name = "PriorityLabel";
+            this.PriorityLabel.Size = new System.Drawing.Size(72, 23);
+            this.PriorityLabel.TabIndex = 11;
+            this.PriorityLabel.Text = "Priority";
             // 
-            // dataGridView3
+            // OrderDGV
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderDGV.AllowUserToAddRows = false;
+            this.OrderDGV.AllowUserToDeleteRows = false;
+            this.OrderDGV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.OrderDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrderDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderMedicine,
-            this.quantity});
-            this.dataGridView3.Location = new System.Drawing.Point(59, 168);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(456, 284);
-            this.dataGridView3.TabIndex = 10;
+            this.quantity,
+            this.dataGridViewTextBoxColumn1});
+            this.OrderDGV.Location = new System.Drawing.Point(59, 168);
+            this.OrderDGV.Name = "OrderDGV";
+            this.OrderDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.OrderDGV.RowTemplate.Height = 25;
+            this.OrderDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.OrderDGV.Size = new System.Drawing.Size(456, 284);
+            this.OrderDGV.TabIndex = 10;
             // 
             // orderMedicine
             // 
             this.orderMedicine.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.orderMedicine.HeaderText = "Medicine";
             this.orderMedicine.Name = "orderMedicine";
+            this.orderMedicine.ReadOnly = true;
+            this.orderMedicine.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // quantity
             // 
             this.quantity.HeaderText = "Quantity";
             this.quantity.Name = "quantity";
+            this.quantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.quantity.Width = 110;
             // 
-            // textBox2
+            // dataGridViewTextBoxColumn1
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 23);
-            this.textBox2.TabIndex = 9;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
-            // label8
+            // OrderSearchTextBox
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(59, 133);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 23);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Search";
+            this.OrderSearchTextBox.Location = new System.Drawing.Point(132, 133);
+            this.OrderSearchTextBox.Name = "OrderSearchTextBox";
+            this.OrderSearchTextBox.Size = new System.Drawing.Size(146, 23);
+            this.OrderSearchTextBox.TabIndex = 9;
+            this.OrderSearchTextBox.TextChanged += new System.EventHandler(this.OrderSearchTextBox_TextChanged);
             // 
-            // label7
+            // OrderSearchLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(29, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 64);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Order";
+            this.OrderSearchLabel.AutoSize = true;
+            this.OrderSearchLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.OrderSearchLabel.Location = new System.Drawing.Point(59, 133);
+            this.OrderSearchLabel.Name = "OrderSearchLabel";
+            this.OrderSearchLabel.Size = new System.Drawing.Size(67, 23);
+            this.OrderSearchLabel.TabIndex = 8;
+            this.OrderSearchLabel.Text = "Search";
+            // 
+            // OrderLabel
+            // 
+            this.OrderLabel.AutoSize = true;
+            this.OrderLabel.Font = new System.Drawing.Font("Fira Sans", 39.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.OrderLabel.Location = new System.Drawing.Point(29, 30);
+            this.OrderLabel.Name = "OrderLabel";
+            this.OrderLabel.Size = new System.Drawing.Size(164, 64);
+            this.OrderLabel.TabIndex = 6;
+            this.OrderLabel.Text = "Order";
             // 
             // confirmations
             // 
             this.confirmations.Controls.Add(this.pictureBox3);
-            this.confirmations.Controls.Add(this.pictureBox2);
+            this.confirmations.Controls.Add(this.ConfirmOrderArrivalPictureBox);
             this.confirmations.Controls.Add(this.H_searchTextBox);
             this.confirmations.Controls.Add(this.H_searchLabel);
-            this.confirmations.Controls.Add(this.historyDGV);
+            this.confirmations.Controls.Add(this.ConfirmationsDGV);
             this.confirmations.Controls.Add(this.confirmationsLabel);
             this.confirmations.Location = new System.Drawing.Point(79, 4);
             this.confirmations.Name = "confirmations";
@@ -436,15 +501,16 @@ namespace Pharmacy.UI
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
+            // ConfirmOrderArrivalPictureBox
             // 
-            this.pictureBox2.Image = global::Pharmacy.Properties.Resources.CONFIRM;
-            this.pictureBox2.Location = new System.Drawing.Point(664, 490);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.ConfirmOrderArrivalPictureBox.Image = global::Pharmacy.Properties.Resources.CONFIRM;
+            this.ConfirmOrderArrivalPictureBox.Location = new System.Drawing.Point(664, 490);
+            this.ConfirmOrderArrivalPictureBox.Name = "ConfirmOrderArrivalPictureBox";
+            this.ConfirmOrderArrivalPictureBox.Size = new System.Drawing.Size(100, 32);
+            this.ConfirmOrderArrivalPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ConfirmOrderArrivalPictureBox.TabIndex = 11;
+            this.ConfirmOrderArrivalPictureBox.TabStop = false;
+            this.ConfirmOrderArrivalPictureBox.Click += new System.EventHandler(this.ConfirmOrderArrivalPictureBox_Click);
             // 
             // H_searchTextBox
             // 
@@ -452,6 +518,7 @@ namespace Pharmacy.UI
             this.H_searchTextBox.Name = "H_searchTextBox";
             this.H_searchTextBox.Size = new System.Drawing.Size(146, 23);
             this.H_searchTextBox.TabIndex = 10;
+            this.H_searchTextBox.TextChanged += new System.EventHandler(this.H_searchTextBox_TextChanged);
             // 
             // H_searchLabel
             // 
@@ -463,44 +530,25 @@ namespace Pharmacy.UI
             this.H_searchLabel.TabIndex = 9;
             this.H_searchLabel.Text = "Search";
             // 
-            // historyDGV
+            // ConfirmationsDGV
             // 
-            this.historyDGV.AllowUserToAddRows = false;
-            this.historyDGV.AllowUserToDeleteRows = false;
-            this.historyDGV.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.historyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historyDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ConfirmationsDGV.AllowUserToAddRows = false;
+            this.ConfirmationsDGV.AllowUserToDeleteRows = false;
+            this.ConfirmationsDGV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.ConfirmationsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConfirmationsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderNumber,
+            this.Status,
             this.dispatchedBy,
             this.dispatchedAt});
-            this.historyDGV.Location = new System.Drawing.Point(59, 168);
-            this.historyDGV.Name = "historyDGV";
-            this.historyDGV.ReadOnly = true;
-            this.historyDGV.RowTemplate.Height = 25;
-            this.historyDGV.Size = new System.Drawing.Size(456, 284);
-            this.historyDGV.TabIndex = 8;
-            // 
-            // orderNumber
-            // 
-            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orderNumber.HeaderText = "Number";
-            this.orderNumber.Name = "orderNumber";
-            this.orderNumber.ReadOnly = true;
-            this.orderNumber.Width = 70;
-            // 
-            // dispatchedBy
-            // 
-            this.dispatchedBy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dispatchedBy.HeaderText = "Dispatched by";
-            this.dispatchedBy.Name = "dispatchedBy";
-            this.dispatchedBy.ReadOnly = true;
-            // 
-            // dispatchedAt
-            // 
-            this.dispatchedAt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dispatchedAt.HeaderText = "Dispatched at";
-            this.dispatchedAt.Name = "dispatchedAt";
-            this.dispatchedAt.ReadOnly = true;
+            this.ConfirmationsDGV.Location = new System.Drawing.Point(59, 168);
+            this.ConfirmationsDGV.Name = "ConfirmationsDGV";
+            this.ConfirmationsDGV.ReadOnly = true;
+            this.ConfirmationsDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.ConfirmationsDGV.RowTemplate.Height = 25;
+            this.ConfirmationsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ConfirmationsDGV.Size = new System.Drawing.Size(456, 284);
+            this.ConfirmationsDGV.TabIndex = 8;
             // 
             // confirmationsLabel
             // 
@@ -581,31 +629,37 @@ namespace Pharmacy.UI
             this.confirmationsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.confirmationsPictureBox.TabIndex = 5;
             this.confirmationsPictureBox.TabStop = false;
-            this.confirmationsPictureBox.Click += new System.EventHandler(this.ConfirmOrdersictureBox_Click);
+            this.confirmationsPictureBox.Click += new System.EventHandler(this.ConfirmOrdersPictureBox_Click);
             // 
-            // name
+            // orderNumber
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.name.HeaderText = "Medicine";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.name.Width = 160;
+            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orderNumber.HeaderText = "Number";
+            this.orderNumber.Name = "orderNumber";
+            this.orderNumber.ReadOnly = true;
+            this.orderNumber.Width = 70;
             // 
-            // packSize
+            // Status
             // 
-            this.packSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.packSize.HeaderText = "Pack size";
-            this.packSize.Name = "packSize";
-            this.packSize.ReadOnly = true;
-            this.packSize.Width = 115;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 75;
             // 
-            // stockStatus
+            // dispatchedBy
             // 
-            this.stockStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.stockStatus.HeaderText = "Stock status";
-            this.stockStatus.Name = "stockStatus";
-            this.stockStatus.ReadOnly = true;
+            this.dispatchedBy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dispatchedBy.HeaderText = "Dispatched by";
+            this.dispatchedBy.Name = "dispatchedBy";
+            this.dispatchedBy.ReadOnly = true;
+            // 
+            // dispatchedAt
+            // 
+            this.dispatchedAt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dispatchedAt.HeaderText = "Dispatched at";
+            this.dispatchedAt.Name = "dispatchedAt";
+            this.dispatchedAt.ReadOnly = true;
             // 
             // UnitMenu
             // 
@@ -628,18 +682,18 @@ namespace Pharmacy.UI
             this.home.PerformLayout();
             this.stock.ResumeLayout(false);
             this.stock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StorageAddPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StorageDGV)).EndInit();
             this.order.ResumeLayout(false);
             this.order.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.removeMedicinePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmOrderPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderDGV)).EndInit();
             this.confirmations.ResumeLayout(false);
             this.confirmations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmOrderArrivalPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfirmationsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storagePictureBox)).EndInit();
@@ -660,43 +714,47 @@ namespace Pharmacy.UI
         private System.Windows.Forms.PictureBox homePictureBox;
         private System.Windows.Forms.PictureBox storagePictureBox;
         private System.Windows.Forms.PictureBox orderPictureBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label homeLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label NotificationLabel3;
+        private System.Windows.Forms.Label HomeLabel;
+        private System.Windows.Forms.Label NotificationLabel2;
         private System.Windows.Forms.Label loggedInInfoLabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NotificationLabel1;
         private System.Windows.Forms.Label unitInfoLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label WorkingUnitLabel;
         private System.Windows.Forms.Label notificationsInfoLabel;
         private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.TextBox StorageSearchTextBox;
+        private System.Windows.Forms.Label StorageSearchLabel;
+        private System.Windows.Forms.DataGridView StorageDGV;
+        private System.Windows.Forms.Label PharmacyStorageLabel;
+        private System.Windows.Forms.Label OrderLabel;
+        private System.Windows.Forms.TextBox OrderSearchTextBox;
+        private System.Windows.Forms.Label OrderSearchLabel;
+        private System.Windows.Forms.DataGridView OrderDGV;
+        private System.Windows.Forms.ComboBox PriorityComboBox;
+        private System.Windows.Forms.Label PriorityLabel;
         private System.Windows.Forms.PictureBox removeMedicinePictureBox;
         private System.Windows.Forms.PictureBox confirmOrderPictureBox;
         private System.Windows.Forms.PictureBox confirmationsPictureBox;
         private System.Windows.Forms.TabPage confirmations;
         private System.Windows.Forms.Label confirmationsLabel;
-        private System.Windows.Forms.DataGridView historyDGV;
+        private System.Windows.Forms.DataGridView ConfirmationsDGV;
         private System.Windows.Forms.TextBox H_searchTextBox;
         private System.Windows.Forms.Label H_searchLabel;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dispatchedBy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dispatchedAt;
+        private System.Windows.Forms.PictureBox ConfirmOrderArrivalPictureBox;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox StorageAddPictureBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn packSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn availability;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dispatchedBy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dispatchedAt;
     }
 }

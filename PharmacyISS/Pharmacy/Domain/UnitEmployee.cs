@@ -6,19 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pharmacy.Domain
 {
-    enum Units{
-        ICU,
-        Pediatric,
-        Neonatal,
-        Oncology,
-        Surgical,
-        Rehabilitation
-    }
+
     class UnitEmployee : Employee
     {
-        private Units WorkingUnit { get; set; }
-
-        public UnitEmployee(int id, string surname, string forename, DateTime hiredate, Units workingunit)
+        public UnitEmployee(int id, string surname, string forename, DateTime hiredate, WorkingUnit workingunit)
         {
             this.ID = id;
             this.Surname = surname;
