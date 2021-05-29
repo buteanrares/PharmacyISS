@@ -1,4 +1,5 @@
-﻿using Pharmacy.UI;
+﻿using Pharmacy.Domain;
+using Pharmacy.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,26 +34,34 @@ namespace Pharmacy
             {
                 connection.Open();
             }
-            catch(Exception)
+            catch (Exception)
             {
-                this.errorLabel.Text += "Cannot connect to database. ";
+                this.errorLabel.Text += "Cannot connect to database. Please contact an administrator. ";
             }
         }
 
         private void LoginButtonPictureBox_Click(object sender, EventArgs e)
         {
-            // Account LogInAccount = this.Service.ReadAccount("username","password");
+            // Account logInAccount = this.Service.ReadAccount("username","password");
+
+            #region REMOVE THIS
+            UnitEmployee unitEmployee = new UnitEmployee(0, "UE_Surname", "UE_Forename", DateTime.Today, WorkingUnit.ICU);
+            Account unitAccount = new Account(0, "unit", "", "", unitEmployee);
+
+            PharmacyEmployee pharmacyEmployee = new PharmacyEmployee(1, "PH_Surname", "PH_Forename", DateTime.Today);
+            Account pharmacyAccount = new Account(0, "pharm", "", "", pharmacyEmployee);
+            #endregion
 
             if (usernameTextBox.Text.Equals("unit"))
             {
-                var UnitMenu = new UnitMenu();
+                var UnitMenu = new UnitMenu(unitAccount);
                 UnitMenu.FormClosed += UnitMenu_FormClosed;
                 UnitMenu.Show();
                 this.Hide();
             }
             else if (usernameTextBox.Text.Equals("pharm"))
             {
-                var PharmacyMenu = new PharmacyMenu();
+                var PharmacyMenu = new PharmacyMenu(pharmacyAccount);
                 PharmacyMenu.FormClosed += PharmacyMenu_FormClosed;
                 PharmacyMenu.Show();
                 this.Hide();

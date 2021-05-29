@@ -17,7 +17,7 @@ namespace Pharmacy.Service
             this.EmployeeRepository = new EmployeeRepository();
         }
 
-        public async Task Create(int id, string surname, string forename, DateTime hiredate, Units workingunit)
+        public async Task Create(int id, string surname, string forename, DateTime hiredate, WorkingUnit workingunit)
         {
             await this.EmployeeRepository.InsertAsync(new UnitEmployee(id, surname, forename, hiredate, workingunit));
         }
@@ -37,7 +37,7 @@ namespace Pharmacy.Service
             return await EmployeeRepository.GetAllAsync();
         }
 
-        public async Task Update(int id, string surname,string forename, DateTime hiredate, Units workingunit)
+        public async Task Update(int id, string surname,string forename, DateTime hiredate, WorkingUnit workingunit)
         {
             await this.EmployeeRepository.UpdateAsync(new UnitEmployee(id, surname, forename, hiredate,workingunit));
         }

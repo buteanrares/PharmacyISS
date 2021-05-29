@@ -16,23 +16,25 @@ namespace Pharmacy.Domain
     enum Status
     {
         Confirmed,
+        Accepted,
+        Refused,
         Pending,
-        Lost
     }
 
     class Order
     {
         public int ID { get; set; }
-        public DateTime ETA { get; set; }
+        public DateTime? ETA { get; set; }
         public List<Medicine> Medicines { get; set; }
-        public Units Destination { get; set; }
+        public WorkingUnit Destination { get; set; }
         public string Issuer { get; set; }
         public Priority Priority { get; set; }
         public DateTime? DispatchedDate { get; set; }
+        public string Dispatcher { get; set; }
         public Status Status { get; set; }
         public DateTime? ConfirmationDate { get; set; }
 
-        public Order(int id, DateTime eta, List<Medicine> medicines, Units destination, string issuer, Priority priority)
+        public Order(int id, DateTime? eta, List<Medicine> medicines, WorkingUnit destination, string issuer, Priority priority, DateTime? dispatcheddate = null, string dispatcher=null, Status status = Status.Pending, DateTime? confirmationdate = null)
         {
             this.ID = id;
             this.ETA = eta;
@@ -40,9 +42,11 @@ namespace Pharmacy.Domain
             this.Destination = destination;
             this.Issuer = issuer;
             this.Priority = priority;
-            this.DispatchedDate = null;
-            this.Status = Status.Pending;
-            this.ConfirmationDate = null;
+            this.DispatchedDate = dispatcheddate;
+            this.Dispatcher = dispatcher;
+            this.Status = status;
+            this.ConfirmationDate = confirmationdate;
         }
+        
     }
 }

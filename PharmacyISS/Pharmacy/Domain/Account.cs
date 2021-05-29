@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pharmacy.Domain
 {
-    class Account
+    public class Account
     {
         public int ID { get; set; }
         public string Email { get; set; }
@@ -22,5 +22,7 @@ namespace Pharmacy.Domain
             this.Email = email;
             this.Employee = employee;
         }
+
+        
     }
 }
