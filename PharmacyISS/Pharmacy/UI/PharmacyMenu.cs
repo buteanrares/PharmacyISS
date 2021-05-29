@@ -199,9 +199,16 @@ namespace Pharmacy.UI
             }
         }
 
-        private void LoadOrderDetails()
+        private async void LoadOrderDetails(object sender, EventArgs e)
         {
-
+            this.orderDetailsDGV.Rows.Clear();
+            int id = (int)this.ordersDGV.SelectedRows[0].Cells[5].Value;
+            Order selectedOrder = await this.OrderService.Read(id);
+            List<Medicine> orderedMedicine = new List<Medicine>(selectedOrder.Medicines);
+            foreach(Medicine medicine in orderedMedicine)
+            {
+                this.orderDetailsDGV.Rows.Add(medicine.Name, medicine.Quantity);
+            }
         }
 
 
@@ -264,7 +271,7 @@ namespace Pharmacy.UI
             Order clone = await this.OrderService.Read(id);
             clone.DispatchedDate = DateTime.Now;
             clone.Status = Status.Pending;
-            await this.OrderService.Update(clone.ID, (DateTime)clone.ETA, clone.Medicines, clone.Destination, clone.Issuer,
+            await this.OrderService.Update(clone.ID, this.ETADateTimePicker.Value, clone.Medicines, clone.Destination, clone.Issuer,
                 clone.Priority, clone.DispatchedDate, clone.Dispatcher, clone.Status);
         }
 
