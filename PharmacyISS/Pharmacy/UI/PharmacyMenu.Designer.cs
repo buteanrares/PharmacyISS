@@ -59,11 +59,6 @@ namespace Pharmacy.UI
             this.O_searchTextBox = new System.Windows.Forms.TextBox();
             this.O_searchLabel = new System.Windows.Forms.Label();
             this.ordersDGV = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issuedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersLabel = new System.Windows.Forms.Label();
             this.history = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -99,6 +94,14 @@ namespace Pharmacy.UI
             this.availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issuedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectETALabel = new System.Windows.Forms.Label();
+            this.ETADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
@@ -356,6 +359,8 @@ namespace Pharmacy.UI
             // 
             // order
             // 
+            this.order.Controls.Add(this.ETADateTimePicker);
+            this.order.Controls.Add(this.SelectETALabel);
             this.order.Controls.Add(this.declinePictureBox);
             this.order.Controls.Add(this.confirmPictureBox);
             this.order.Controls.Add(this.label10);
@@ -467,7 +472,8 @@ namespace Pharmacy.UI
             this.dataGridViewTextBoxColumn1,
             this.issuedBy,
             this.priority,
-            this.totalQuantity});
+            this.totalQuantity,
+            this.dataGridViewTextBoxColumn2});
             this.ordersDGV.Location = new System.Drawing.Point(59, 168);
             this.ordersDGV.MultiSelect = false;
             this.ordersDGV.Name = "ordersDGV";
@@ -477,42 +483,7 @@ namespace Pharmacy.UI
             this.ordersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ordersDGV.Size = new System.Drawing.Size(458, 150);
             this.ordersDGV.TabIndex = 2;
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "Number";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Unit";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 90;
-            // 
-            // issuedBy
-            // 
-            this.issuedBy.HeaderText = "Issued by";
-            this.issuedBy.Name = "issuedBy";
-            this.issuedBy.ReadOnly = true;
-            this.issuedBy.Width = 85;
-            // 
-            // priority
-            // 
-            this.priority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.priority.HeaderText = "Priority";
-            this.priority.Name = "priority";
-            this.priority.ReadOnly = true;
-            this.priority.Width = 60;
-            // 
-            // totalQuantity
-            // 
-            this.totalQuantity.HeaderText = "Total quantity";
-            this.totalQuantity.Name = "totalQuantity";
-            this.totalQuantity.ReadOnly = true;
-            this.totalQuantity.Width = 110;
+            this.ordersDGV.SelectionChanged += new System.EventHandler(this.LoadOrderDetails);
             // 
             // ordersLabel
             // 
@@ -873,6 +844,68 @@ namespace Pharmacy.UI
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // Number
+            // 
+            this.Number.HeaderText = "Number";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Unit";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 90;
+            // 
+            // issuedBy
+            // 
+            this.issuedBy.HeaderText = "Issued by";
+            this.issuedBy.Name = "issuedBy";
+            this.issuedBy.ReadOnly = true;
+            this.issuedBy.Width = 85;
+            // 
+            // priority
+            // 
+            this.priority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.priority.HeaderText = "Priority";
+            this.priority.Name = "priority";
+            this.priority.ReadOnly = true;
+            this.priority.Width = 60;
+            // 
+            // totalQuantity
+            // 
+            this.totalQuantity.HeaderText = "Total quantity";
+            this.totalQuantity.Name = "totalQuantity";
+            this.totalQuantity.ReadOnly = true;
+            this.totalQuantity.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // SelectETALabel
+            // 
+            this.SelectETALabel.AutoSize = true;
+            this.SelectETALabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.SelectETALabel.Location = new System.Drawing.Point(605, 388);
+            this.SelectETALabel.Name = "SelectETALabel";
+            this.SelectETALabel.Size = new System.Drawing.Size(97, 23);
+            this.SelectETALabel.TabIndex = 11;
+            this.SelectETALabel.Text = "Select ETA";
+            // 
+            // ETADateTimePicker
+            // 
+            this.ETADateTimePicker.Location = new System.Drawing.Point(576, 414);
+            this.ETADateTimePicker.MaxDate = new System.DateTime(2299, 12, 31, 0, 0, 0, 0);
+            this.ETADateTimePicker.MinDate = new System.DateTime(2021, 5, 29, 0, 0, 0, 0);
+            this.ETADateTimePicker.Name = "ETADateTimePicker";
+            this.ETADateTimePicker.Size = new System.Drawing.Size(163, 23);
+            this.ETADateTimePicker.TabIndex = 12;
+            // 
             // PharmacyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -982,11 +1015,6 @@ namespace Pharmacy.UI
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.DateTimePicker ExpirationDateTimePicker;
         private System.Windows.Forms.PictureBox AddPictureBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
         private System.Windows.Forms.PictureBox RemovePictureBox;
         private System.Windows.Forms.PictureBox UpdatePictureBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -994,5 +1022,13 @@ namespace Pharmacy.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn availability;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpirationDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issuedBy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DateTimePicker ETADateTimePicker;
+        private System.Windows.Forms.Label SelectETALabel;
     }
 }

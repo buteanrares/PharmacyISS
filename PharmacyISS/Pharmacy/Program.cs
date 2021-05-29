@@ -55,15 +55,15 @@ namespace Pharmacy
  *          
  * PharmacyMenu.cs:
  *      HOME TAB:
- *          Add real account information (username & working unit=Pharmacy)
+ *          Add real account information (username & working unit=Pharmacy) (DONE)
  *          Relevant notification system
  *      
  *      STORAGE TAB:
- *          Remove medicine functionality
+ *          Remove medicine functionality (DONE)
  *      
  *      ORDERS TAB:
- *          Add DateTimePicker for Order ETA
- *          Load order details DGV
+ *          Add DateTimePicker for Order ETA (DONE)
+ *          Load order details DGV (DONE)
  *      
  *      HISTORY TAB:
  *          (OPTIONAL) Add view note (VIEW ORDER NOTE @ UNITMENU.cs)
@@ -73,6 +73,7 @@ namespace Pharmacy
  *          
  * DATABASE:
  *     To be implemented after all of the above are complete
+ *     Implement OrderedMedicine table for Order.cs' List<Medicine> medicine field.
  * 
  * Create requested diagrams.
  */
