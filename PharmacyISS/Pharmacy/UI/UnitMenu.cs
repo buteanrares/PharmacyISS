@@ -57,14 +57,14 @@ namespace Pharmacy.UI
                     this.homePictureBox.BackColor = Color.LightGray;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.White;
-                    this.confirmationsPictureBox.BackColor = Color.LightGray;
+                    this.confirmationsPictureBox.BackColor = Color.White;
                     break;
 
                 case 1:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.LightGray;
                     this.orderPictureBox.BackColor = Color.White;
-                    this.confirmationsPictureBox.BackColor = Color.LightGray;
+                    this.confirmationsPictureBox.BackColor = Color.White;
                     LoadStorage();
                     break;
 
@@ -72,14 +72,14 @@ namespace Pharmacy.UI
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.LightGray;
-                    this.confirmationsPictureBox.BackColor = Color.LightGray;
+                    this.confirmationsPictureBox.BackColor = Color.White;
                     break;
 
                 case 3:
                     this.homePictureBox.BackColor = Color.White;
                     this.storagePictureBox.BackColor = Color.White;
                     this.orderPictureBox.BackColor = Color.White;
-                    this.confirmationsPictureBox.BackColor = Color.White;
+                    this.confirmationsPictureBox.BackColor = Color.LightGray;
                     LoadConfirmations();
                     break;
 
@@ -91,44 +91,27 @@ namespace Pharmacy.UI
         private void homePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[0];
-            this.homePictureBox.BackColor = Color.LightGray;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.White;
-            this.confirmationsPictureBox.BackColor = Color.White;
         }
 
         private void storagePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[1];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.LightGray;
-            this.orderPictureBox.BackColor = Color.White;
-            this.confirmationsPictureBox.BackColor = Color.White;
-            LoadStorage();
         }
 
         private void orderPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[2];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.LightGray;
-            this.confirmationsPictureBox.BackColor = Color.White;
         }
 
         private void ConfirmOrdersPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[3];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.White;
-            this.confirmationsPictureBox.BackColor = Color.LightGray;
-            LoadConfirmations();
         }
 
-        private void LoadStorage(string searchString="")
+        private async void LoadStorage(string searchString="")
         {
-            IEnumerable<Medicine> medicines = (IEnumerable<Medicine>)this.MedicineService.ReadAll();
+            this.StorageDGV.Rows.Clear();
+            IEnumerable<Medicine> medicines = await this.MedicineService.ReadAll();
             foreach (Medicine medicine in medicines)
             {
                 if (medicine.Name.Contains(searchString))
@@ -144,9 +127,10 @@ namespace Pharmacy.UI
             }
         }
 
-        private void LoadConfirmations(string searchString = "")
+        private async void LoadConfirmations(string searchString = "")
         {
-            IEnumerable<Order> orders = (IEnumerable<Order>)this.OrderService.ReadAll();
+            this.ConfirmationsDGV.Rows.Clear();
+            IEnumerable<Order> orders = await this.OrderService.ReadAll();
             foreach(Order order in orders)
             {
                 if (order.DispatchedDate != null && order.ID.ToString().Contains(searchString)){
@@ -167,13 +151,13 @@ namespace Pharmacy.UI
         {
             int id = (int)this.ConfirmationsDGV.SelectedRows[0].Cells[0].Value;
             Order confirmedOrder = await this.OrderService.Read(id);
-            await this.OrderService.Update(confirmedOrder.ID, (DateTime)confirmedOrder.ETA, confirmedOrder.Medicines, confirmedOrder.Destination, confirmedOrder.Issuer, confirmedOrder.Priority, confirmedOrder.DispatchedDate, confirmedOrder.Dispatcher, Domain.Status.Confirmed, DateTime.Today);
+            await this.OrderService.Update(confirmedOrder.ID, (DateTime)confirmedOrder.ETA, confirmedOrder.Medicines, (int)confirmedOrder.Destination, confirmedOrder.Issuer, (int)confirmedOrder.Priority, confirmedOrder.DispatchedDate, confirmedOrder.Dispatcher, (int)Domain.Status.Confirmed, DateTime.Today);
             
         }
 
         private void OrderSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            // TODO
         }
 
         private void removeMedicinePictureBox_Click(object sender, EventArgs e)
@@ -187,14 +171,14 @@ namespace Pharmacy.UI
         private async void confirmOrderPictureBox_Click(object sender, EventArgs e)
         {
             int id = new Random().Next(1, 2147483647);
-            List<Medicine> orderedMedicines = new List<Medicine>();
+            Dictionary<Medicine,int> orderedMedicines = new();
             
             foreach(DataGridViewRow row in this.OrderDGV.Rows)
             {
-                orderedMedicines.Add(await this.MedicineService.Read((int)row.Cells[2].Value));
+                orderedMedicines.Add(await this.MedicineService.Read((int)row.Cells[2].Value), int.Parse(row.Cells[1].Value.ToString()));
             }
 
-            await this.OrderService.Create(id, null, orderedMedicines, this.Account.Employee.WorkingUnit, this.Account.Username, (Priority)this.PriorityComboBox.SelectedIndex, null, null, Domain.Status.Pending, null);
+            await this.OrderService.Create(id, null, orderedMedicines, (int)this.Account.Employee.WorkingUnit, this.Account.Username, this.PriorityComboBox.SelectedIndex+1, null, null, (int)Domain.Status.Pending, null);
             this.OrderDGV.Rows.Clear();
             MessageBox.Show($"Order number {id} has been placed.", "Order placed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -206,9 +190,12 @@ namespace Pharmacy.UI
 
         private async void StorageAddPictureBox_Click(object sender, EventArgs e)
         {
-            int id = (int)this.StorageDGV.SelectedRows[0].Cells[3].Value;
-            Medicine medicine = await this.MedicineService.Read(id);
-            this.OrderDGV.Rows.Add(medicine.Name, 1, id);
+            if (this.StorageDGV.SelectedRows.Count > 0)
+            {
+                int id = (int)this.StorageDGV.SelectedRows[0].Cells[4].Value;
+                Medicine medicine = await this.MedicineService.Read(id);
+                this.OrderDGV.Rows.Add(medicine.Name, 1, id);
+            }
         }
 
         private void StorageSearchTextBox_TextChanged(object sender, EventArgs e)

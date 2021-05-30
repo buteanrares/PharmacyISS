@@ -23,10 +23,10 @@ namespace Pharmacy.Repository
 
         private SqlConnection SqlConnection()
         {
-            return new SqlConnection(@"(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Rares\Projects\Pharmacy\PharmacyISS\Pharmacy\Database\PharmacyDB.mdf; Integrated Security = True");
+            return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\Database\PharmacyDB.mdf;Integrated Security=True");
         }
 
-        private IDbConnection CreateConnection()
+        protected IDbConnection CreateConnection()
         {
             var conn = SqlConnection();
             conn.Open();
@@ -41,6 +41,14 @@ namespace Pharmacy.Repository
             {
                 return await connection.QueryAsync<T>($"SELECT * FROM {_tableName}");
             }
+        }
+
+        public IEnumerable<T> GetAllNonAsync()
+        {
+                using (var connection = CreateConnection())
+                {
+                    return connection.Query<T>($"SELECT * FROM {_tableName}");
+                }
         }
 
         public async Task DeleteRowAsync(int id)
@@ -100,6 +108,7 @@ namespace Pharmacy.Repository
             insertQuery.Append("(");
 
             var properties = GenerateListOfProperties(GetProperties);
+            properties.Remove("Medicines"); //For inserting into Order table
             properties.ForEach(prop => { insertQuery.Append($"[{prop}],"); });
 
             insertQuery

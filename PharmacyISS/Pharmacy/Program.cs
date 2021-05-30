@@ -27,7 +27,7 @@ namespace Pharmacy
 /* TODO LIST:
  * 
  * Login.cs:
- *      Implement account base login
+ *      Implement account based login
  *      Add a Create account form
  *      (OPTIONAL) Add Forgot passowrd form (email based)
  *      
@@ -43,7 +43,7 @@ namespace Pharmacy
  *          Datagridview functionality (DONE)
  *      
  *      ORDER TAB:
- *          Search functionality (INFO: No LoadOrder() method is needed bcs StorageTab.Add button uploads medicine into order)
+ *          Search functionality (INFO: No LoadOrder() method is needed bcs StorageTab.Add button uploads medicine into orderDGV)
  *          Remove medicine functionality (DONE)
  *          Datagridview functionality (DONE - made by StorageTab.Add button)
  *          Place order functionality (DONE)
@@ -73,7 +73,8 @@ namespace Pharmacy
  *          
  * DATABASE:
  *     To be implemented after all of the above are complete
- *     Implement OrderedMedicine table for Order.cs' List<Medicine> medicine field.
+ *     Implement OrderedMedicine table for Order.cs' List<Medicine> medicine field. (X)
+ *     Many to many relationship
  * 
  * Create requested diagrams.
  */

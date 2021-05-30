@@ -83,3 +83,6 @@ C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-wi
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.pdb
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.genruntimeconfig.cache
 C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\obj\Debug\net5.0-windows\Pharmacy.csproj.AssemblyReference.cache
+C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\EntityFramework.SqlServer.dll
+C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\EntityFramework.dll
+C:\Users\Rares\Projects\CSharp\Pharmacy\PharmacyISS\Pharmacy\bin\Debug\net5.0-windows\Dapper.SimpleCRUD.dll

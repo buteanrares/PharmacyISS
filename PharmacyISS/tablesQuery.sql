@@ -1,43 +1,47 @@
-﻿USE [C:\USERS\BUTEA\VSPROJECTS\PHARMACYISS\PHARMACYISS\PHARMACY\PHARMACYDB.MDF]
-
-
-CREATE TABLE [dbo].[Account]
+﻿CREATE TABLE Employee
 (
-	[ID] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-	[Username] VARCHAR(40) NOT NULL,
-	[Password] VARCHAR(40) NOT NULL,
-	[Unit] VARCHAR(40) NOT NULL
-)
+	ID INT PRIMARY KEY,
+	Surname VARCHAR(40),
+	Forename VARCHAR(40) ,
+	HireDate DATE,
+	WorkingUnit VARCHAR(30) 
+);
 
-CREATE TABLE [dbo].[Employee]
+CREATE TABLE Account
 (
-	[ID] INT NOT NULL PRIMARY KEY,
-	[AccountID] INT NOT NULL FOREIGN KEY REFERENCES [Account](ID),
-	[Name] VARCHAR(40) NOT NULL,
-	[Salary] INT NOT NULL CHECK (Salary >= 0),
-	[Title] VARCHAR(25) NOT NULL,
-	[HireDate] DATE NOT NULL,
-)
+	ID INT PRIMARY KEY,
+	Email VARCHAR(80),
+	Username VARCHAR(40),
+	Password VARCHAR(40),
+	Employee INT FOREIGN KEY REFERENCES Employee(ID)
+);
 
-
-CREATE TABLE [dbo].[Medicine]
+CREATE TABLE Medicine
 (
-	[ID] INT NOT NULL PRIMARY KEY,
-	[Name] VARCHAR(30) NOT NULL,
-	[PackSize] INT NOT NULL,
-)
+	ID INT PRIMARY KEY,
+	Name VARCHAR(40),
+	PackSize INT,
+	Quantity INT,
+	ExpirationDate DATE
+);
 
-CREATE TABLE [dbo].[Order]
+CREATE TABLE "Order"
 (
-	[ID] INT NOT NULL PRIMARY KEY,
-	[ETA] DATETIME
-)
+	ID INT PRIMARY KEY,
+	ETA DATE,
+	Destination VARCHAR(40),
+	Issuer VARCHAR(40),
+	Priority VARCHAR(40),
+	DispatchedDate VARCHAR(40),
+	Dispatcher VARCHAR(40),
+	Status VARCHAR(40),
+	ConfirmationDate VARCHAR(40)
+);
 
-CREATE TABLE [dbo].[MedicineOrder]
+CREATE TABLE OrderMedicine
 (
-	[Id] INT NOT NULL PRIMARY KEY,
-	[MedicineID] INT NOT NULL FOREIGN KEY REFERENCES [Medicine](ID),
-	[OrderID] INT NOT NULL FOREIGN KEY REFERENCES [Order](ID),
-	[Quantity] INT NOT NULL CHECK (Quantity > 0)
-)
-
+	ID INT PRIMARY KEY,
+	OrderID INT FOREIGN KEY REFERENCES "Order"(ID),
+	MedicineID INT FOREIGN KEY REFERENCES Medicine(ID),
+	Quantity INT
+);

@@ -1,4 +1,5 @@
 ﻿using Pharmacy.Domain;
+using Pharmacy.Repository;
 using Pharmacy.Service;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,7 @@ namespace Pharmacy.UI
                     this.orderPictureBox.BackColor = Color.White;
                     this.historyPictureBox.BackColor = Color.White;
                     this.AddMedicinePictureBox.BackColor = Color.White;
+                    LoadStorage();
                     break;
 
                 case 2:
@@ -106,23 +108,12 @@ namespace Pharmacy.UI
         private void homePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[0];
-            this.homePictureBox.BackColor = Color.LightGray;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.White;
-            this.historyPictureBox.BackColor = Color.White;
-            this.AddMedicinePictureBox.BackColor = Color.White;
-
         }
 
 
         private void storagePictureBox_Click(object sender, EventArgs e)
         {
             this.tabControl.SelectedTab = tabControl.TabPages[1];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.LightGray;
-            this.orderPictureBox.BackColor = Color.White;
-            this.historyPictureBox.BackColor = Color.White;
-            this.AddMedicinePictureBox.BackColor = Color.White;
 
         }
 
@@ -130,22 +121,12 @@ namespace Pharmacy.UI
         private void orderPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[2];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.LightGray;
-            this.historyPictureBox.BackColor = Color.White;
-            this.AddMedicinePictureBox.BackColor = Color.White;
         }
 
 
         private void historyPictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[3];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.White;
-            this.historyPictureBox.BackColor = Color.LightGray;
-            this.AddMedicinePictureBox.BackColor = Color.White;
         }
 
 
@@ -166,12 +147,13 @@ namespace Pharmacy.UI
         }
 
 
-        private void LoadStorage(string searchString = "")
+        private async void LoadStorage(string searchString = "")
         {
-            IEnumerable<Medicine> medicines = (IEnumerable<Medicine>)this.MedicineService.ReadAll();
+            this.storageDGV.Rows.Clear();
+            IEnumerable<Medicine> medicines = await this.MedicineService.ReadAll();
             foreach (Medicine med in medicines)
             {
-                if (med.Name.Contains(searchString))
+                if (med.Name.ToLower().Contains(searchString.ToLower()))
                 {
                     string availability = "Low";
                     if (med.Quantity >= 100)
@@ -181,17 +163,19 @@ namespace Pharmacy.UI
                     this.storageDGV.Rows.Add(med.Name, med.PackSize, availability, med.ExpirationDate.ToString(), med.ID);
                 }
             }
+            return;
         }
 
 
-        private void LoadOrders(string searchString = "")
+        private async void LoadOrders(string searchString = "")
         {
-            IEnumerable<Order> orders = (IEnumerable<Order>)this.OrderService.ReadAll();
+            IEnumerable<Order> orders = await this.OrderService.ReadAll();
+            searchString = searchString.ToLower();
             foreach (Order order in orders)
             {
-                if (order.Destination.ToString().Contains(searchString) ||
-                    order.Issuer.Contains(searchString) ||
-                    order.Priority.ToString().Contains(searchString))
+                if (order.Destination.ToString().ToLower().Contains(searchString) ||
+                    order.Issuer.ToLower().Contains(searchString) ||
+                    order.Priority.ToString().ToLower().Contains(searchString))
                 {
                     int totalQuantity = order.Medicines.Sum(medicine => medicine.Quantity);
                     this.ordersDGV.Rows.Add(order.Destination, order.Issuer, order.Priority, totalQuantity);
@@ -212,13 +196,14 @@ namespace Pharmacy.UI
         }
 
 
-        private void LoadHistory(string searchString = "")
+        private async void LoadHistory(string searchString = "")
         {
-            IEnumerable<Order> orders = (IEnumerable<Order>)this.OrderService.ReadAll();
+            IEnumerable<Order> orders = await this.OrderService.ReadAll();
+            searchString = searchString.ToLower();
             foreach(Order order in orders)
             {
-                if (order.DispatchedDate != null && (order.ID.ToString().Contains(searchString) ||
-                    order.Status.ToString().Contains(searchString)))
+                if (order.DispatchedDate != null && (order.ID.ToString().ToLower().Contains(searchString) ||
+                    order.Status.ToString().ToLower().Contains(searchString)))
                 {
                     if (order.ConfirmationDate != null)
                     {
@@ -271,8 +256,8 @@ namespace Pharmacy.UI
             Order clone = await this.OrderService.Read(id);
             clone.DispatchedDate = DateTime.Now;
             clone.Status = Status.Pending;
-            await this.OrderService.Update(clone.ID, this.ETADateTimePicker.Value, clone.Medicines, clone.Destination, clone.Issuer,
-                clone.Priority, clone.DispatchedDate, clone.Dispatcher, clone.Status);
+            await this.OrderService.Update(clone.ID, this.ETADateTimePicker.Value, clone.Medicines, (int)clone.Destination, clone.Issuer,
+                (int)clone.Priority, clone.DispatchedDate, clone.Dispatcher, (int)clone.Status);
         }
 
 
@@ -290,7 +275,7 @@ namespace Pharmacy.UI
         }
 
 
-        private async void AddPictureBox_Click(object sender, EventArgs e)
+        private async void AddPictureBox_ClickAsync(object sender, EventArgs e)
         {
             int id = new Random().Next(1, 2147483647);
             string name = NameTextBox.Text;
