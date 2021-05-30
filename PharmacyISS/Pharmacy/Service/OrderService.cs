@@ -11,15 +11,20 @@ namespace Pharmacy.Service
     class OrderService
     {
         private OrderRepository OrderRepository;
+        private OrderMedicineRepository OrderMedicineRepository;
 
         public OrderService()
         {
             this.OrderRepository = new OrderRepository();
+            this.OrderMedicineRepository = new OrderMedicineRepository();
         }
 
-        public async Task Create(int id, DateTime? eta, List<Medicine> medicines, WorkingUnit destination, string issuer, Priority priority, DateTime? dispatcheddate = null, string dispatcher=null, Status status = Status.Pending, DateTime? confirmationdate = null)
+        public async Task Create(int id, DateTime? eta, Dictionary<Medicine,int> medicines, int destination, string issuer, int priority, DateTime? dispatcheddate = null, string dispatcher=null, int status = 4, DateTime? confirmationdate = null)
         {
-            await this.OrderRepository.InsertAsync(new Order(id, eta, medicines, destination, issuer, priority, dispatcheddate, dispatcher, status, confirmationdate));
+            foreach (var pair in medicines) {
+                await this.OrderMedicineRepository.InsertAsync(new OrderMedicine(new Random().Next(1, 2147483647),id,pair.Key.ID,pair.Value));
+                    }
+            await this.OrderRepository.InsertAsync(new Order(id, eta, destination, issuer, priority, dispatcheddate, dispatcher, status, confirmationdate));
         }
 
         public async Task<Order> Read(int id)
@@ -32,7 +37,7 @@ namespace Pharmacy.Service
             return await this.OrderRepository.GetAllAsync();
         }
 
-        public async Task Update(int id, DateTime eta, List<Medicine> medicines, WorkingUnit destination, string issuer, Priority priority, DateTime? dispatcheddate = null,string dispatcher=null, Status status = Status.Pending, DateTime? confirmationdate = null)
+        public async Task Update(int id, DateTime eta, List<Medicine> medicines, int destination, string issuer, int priority, DateTime? dispatcheddate = null,string dispatcher=null, int status = 4, DateTime? confirmationdate = null)
         {
             await this.OrderRepository.UpdateAsync(new Order(id, eta, medicines, destination, issuer, priority,dispatcheddate,dispatcher, status,confirmationdate));
         }

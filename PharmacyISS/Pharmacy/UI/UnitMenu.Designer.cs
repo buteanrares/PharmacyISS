@@ -71,6 +71,10 @@ namespace Pharmacy.UI
             this.H_searchTextBox = new System.Windows.Forms.TextBox();
             this.H_searchLabel = new System.Windows.Forms.Label();
             this.ConfirmationsDGV = new System.Windows.Forms.DataGridView();
+            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispatchedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dispatchedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.confirmationsLabel = new System.Windows.Forms.Label();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.logoutPictureBox = new System.Windows.Forms.PictureBox();
@@ -78,10 +82,6 @@ namespace Pharmacy.UI
             this.storagePictureBox = new System.Windows.Forms.PictureBox();
             this.orderPictureBox = new System.Windows.Forms.PictureBox();
             this.confirmationsPictureBox = new System.Windows.Forms.PictureBox();
-            this.orderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatchedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatchedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.home.SuspendLayout();
             this.stock.SuspendLayout();
@@ -393,7 +393,7 @@ namespace Pharmacy.UI
             "Low",
             "Normal",
             "High"});
-            this.PriorityComboBox.Location = new System.Drawing.Point(137, 475);
+            this.PriorityComboBox.Location = new System.Drawing.Point(137, 477);
             this.PriorityComboBox.Name = "PriorityComboBox";
             this.PriorityComboBox.Size = new System.Drawing.Size(121, 22);
             this.PriorityComboBox.TabIndex = 12;
@@ -402,7 +402,7 @@ namespace Pharmacy.UI
             // 
             this.PriorityLabel.AutoSize = true;
             this.PriorityLabel.Font = new System.Drawing.Font("Fira Sans", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.PriorityLabel.Location = new System.Drawing.Point(59, 475);
+            this.PriorityLabel.Location = new System.Drawing.Point(59, 477);
             this.PriorityLabel.Name = "PriorityLabel";
             this.PriorityLabel.Size = new System.Drawing.Size(72, 23);
             this.PriorityLabel.TabIndex = 11;
@@ -550,6 +550,36 @@ namespace Pharmacy.UI
             this.ConfirmationsDGV.Size = new System.Drawing.Size(456, 284);
             this.ConfirmationsDGV.TabIndex = 8;
             // 
+            // orderNumber
+            // 
+            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orderNumber.HeaderText = "Number";
+            this.orderNumber.Name = "orderNumber";
+            this.orderNumber.ReadOnly = true;
+            this.orderNumber.Width = 70;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Status.Width = 75;
+            // 
+            // dispatchedBy
+            // 
+            this.dispatchedBy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dispatchedBy.HeaderText = "Dispatched by";
+            this.dispatchedBy.Name = "dispatchedBy";
+            this.dispatchedBy.ReadOnly = true;
+            // 
+            // dispatchedAt
+            // 
+            this.dispatchedAt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dispatchedAt.HeaderText = "Dispatched at";
+            this.dispatchedAt.Name = "dispatchedAt";
+            this.dispatchedAt.ReadOnly = true;
+            // 
             // confirmationsLabel
             // 
             this.confirmationsLabel.AutoSize = true;
@@ -630,36 +660,6 @@ namespace Pharmacy.UI
             this.confirmationsPictureBox.TabIndex = 5;
             this.confirmationsPictureBox.TabStop = false;
             this.confirmationsPictureBox.Click += new System.EventHandler(this.ConfirmOrdersPictureBox_Click);
-            // 
-            // orderNumber
-            // 
-            this.orderNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orderNumber.HeaderText = "Number";
-            this.orderNumber.Name = "orderNumber";
-            this.orderNumber.ReadOnly = true;
-            this.orderNumber.Width = 70;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Status.Width = 75;
-            // 
-            // dispatchedBy
-            // 
-            this.dispatchedBy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dispatchedBy.HeaderText = "Dispatched by";
-            this.dispatchedBy.Name = "dispatchedBy";
-            this.dispatchedBy.ReadOnly = true;
-            // 
-            // dispatchedAt
-            // 
-            this.dispatchedAt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dispatchedAt.HeaderText = "Dispatched at";
-            this.dispatchedAt.Name = "dispatchedAt";
-            this.dispatchedAt.ReadOnly = true;
             // 
             // UnitMenu
             // 

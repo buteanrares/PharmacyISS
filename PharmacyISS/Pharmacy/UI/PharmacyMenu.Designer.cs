@@ -636,7 +636,7 @@ namespace Pharmacy.UI
             this.AddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddPictureBox.TabIndex = 19;
             this.AddPictureBox.TabStop = false;
-            this.AddPictureBox.Click += new System.EventHandler(this.AddPictureBox_Click);
+            this.AddPictureBox.Click += new System.EventHandler(this.AddPictureBox_ClickAsync);
             // 
             // QuantityNumericUpDown
             // 

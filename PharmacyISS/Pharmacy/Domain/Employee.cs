@@ -4,13 +4,13 @@ namespace Pharmacy.Domain
 {
     public enum WorkingUnit
     {
-        Pharmacy,
-        ICU,
-        Pediatric,
-        Neonatal,
-        Oncology,
-        Surgical,
-        Rehabilitation
+        Pharmacy=1,
+        ICU=2,
+        Pediatric=3,
+        Neonatal=4,
+        Oncology=5,
+        Surgical=6,
+        Rehabilitation=7
     }
 
     public abstract class Employee

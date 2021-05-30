@@ -8,17 +8,17 @@ namespace Pharmacy.Domain
 {
     enum Priority
     {
-        Low,
-        Medium,
-        High
+        Low=1,
+        Medium=2,
+        High=3
     }
 
     enum Status
     {
-        Confirmed,
-        Accepted,
-        Refused,
-        Pending,
+        Confirmed=1,
+        Accepted=2,
+        Refused=3,
+        Pending=4,
     }
 
     class Order
@@ -34,19 +34,33 @@ namespace Pharmacy.Domain
         public Status Status { get; set; }
         public DateTime? ConfirmationDate { get; set; }
 
-        public Order(int id, DateTime? eta, List<Medicine> medicines, WorkingUnit destination, string issuer, Priority priority, DateTime? dispatcheddate = null, string dispatcher=null, Status status = Status.Pending, DateTime? confirmationdate = null)
+        public Order(int id, DateTime? eta, List<Medicine> medicines, int destination, string issuer, int priority, DateTime? dispatcheddate = null, string dispatcher=null, int status = 4, DateTime? confirmationdate = null)
         {
             this.ID = id;
             this.ETA = eta;
             this.Medicines = medicines;
-            this.Destination = destination;
+            this.Destination = (WorkingUnit)destination;
             this.Issuer = issuer;
-            this.Priority = priority;
+            this.Priority = (Priority)priority;
             this.DispatchedDate = dispatcheddate;
             this.Dispatcher = dispatcher;
-            this.Status = status;
+            this.Status = (Status)status;
             this.ConfirmationDate = confirmationdate;
         }
-        
+
+        public Order(int id, DateTime? eta, int destination, string issuer, int priority, DateTime? dispatcheddate = null, string dispatcher = null, int status = 4, DateTime? confirmationdate = null)
+        {
+            this.ID = id;
+            this.ETA = eta;
+            this.Medicines = new();
+            this.Destination = (WorkingUnit)destination;
+            this.Issuer = issuer;
+            this.Priority = (Priority)priority;
+            this.DispatchedDate = dispatcheddate;
+            this.Dispatcher = dispatcher;
+            this.Status = (Status)status;
+            this.ConfirmationDate = confirmationdate;
+        }
+
     }
 }
