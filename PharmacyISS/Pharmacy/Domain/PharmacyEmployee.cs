@@ -8,13 +8,7 @@ namespace Pharmacy.Domain
 {
     class PharmacyEmployee : Employee
     {
-        public PharmacyEmployee(int id, string surname, string forename, DateTime hiredate)
-        {
-            this.ID = id;
-            this.Surname = surname;
-            this.Forename = forename;
-            this.HireDate = hiredate;
-            this.WorkingUnit = WorkingUnit.Pharmacy;
-        }
+        public PharmacyEmployee(int id, string surname, string forename, DateTime hiredate) : base(id, surname, forename, hiredate, WorkingUnit.Pharmacy) { }
+
     }
 }
