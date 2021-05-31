@@ -19,6 +19,9 @@ namespace Pharmacy.UI
         private readonly OrderService OrderService = new OrderService();
         private Account Account;
 
+        private Image Add = Properties.Resources.ADD;
+        private Image Update = Properties.Resources.UPDATE1;
+
         public PharmacyMenu(Account account)
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace Pharmacy.UI
             this.logoutPictureBox.BackColor = Color.FromArgb(240,240,240);
             this.homePictureBox.BackColor = Color.LightGray;
             this.usernameLabel.Text = this.Account.Username;
+            
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace Pharmacy.UI
                     this.ExpirationDateTimePicker.Value = DateTime.Today;
                     this.PackSizeNumericUpDown.Value = 0;
                     this.QuantityNumericUpDown.Value = 0;
-                    this.AddPictureBox.Image = Pharmacy.Properties.Resources.ADD;
+                    this.AddPictureBox.Image = Add;
                     break;
 
                 default:
@@ -135,17 +139,6 @@ namespace Pharmacy.UI
         private void AddMedicinePictureBox_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tabControl.TabPages[4];
-            this.homePictureBox.BackColor = Color.White;
-            this.storagePictureBox.BackColor = Color.White;
-            this.orderPictureBox.BackColor = Color.White;
-            this.historyPictureBox.BackColor = Color.White;
-            this.AddMedicinePictureBox.BackColor = Color.LightGray;
-            this.AddMedicineLabel.Text = "Add medicine";
-            this.NameTextBox.Text = "";
-            this.ExpirationDateTimePicker.Value = DateTime.Today;
-            this.PackSizeNumericUpDown.Value = 0;
-            this.QuantityNumericUpDown.Value = 0;
-            this.AddPictureBox.Image = Pharmacy.Properties.Resources.ADD;
         }
 
 
@@ -162,10 +155,9 @@ namespace Pharmacy.UI
                         availability = "Normal";
                     if (med.Quantity >= 500)
                         availability = "High";
-                    this.storageDGV.Rows.Add(med.Name, med.PackSize, availability, med.ExpirationDate.Date.ToString(), med.ID);
+                    this.storageDGV.Rows.Add(med.Name, med.PackSize, availability, med.ExpirationDate.ToShortDateString(), med.ID);
                 }
             }
-            return;
         }
 
 
@@ -216,7 +208,7 @@ namespace Pharmacy.UI
             searchString = searchString.ToLower();
             foreach(Order order in orders)
             {
-                if (order.DispatchedDate != null && (order.ID.ToString().ToLower().Contains(searchString) ||
+                if (order.Status != Status.Pending && (order.ID.ToString().ToLower().Contains(searchString) ||
                     order.Status.ToString().ToLower().Contains(searchString)))
                 {
                     if (order.ConfirmationDate != null)
@@ -259,7 +251,10 @@ namespace Pharmacy.UI
         private async void declinePictureBox_Click(object sender, EventArgs e)
         {
             int id = int.Parse(this.ordersDGV.SelectedRows[0].Cells[0].Value.ToString());
-            await this.OrderService.Delete(id);
+            //await this.OrderService.Delete(id); Instead of deleting, update the order with Refused status
+            Order declinedOrder = await this.OrderService.Read(id);
+            declinedOrder.Status = Status.Refused;
+            await this.OrderService.Update(declinedOrder.ID, null, (int)declinedOrder.Destination, declinedOrder.Issuer, (int)declinedOrder.Priority, null, this.Account.Username, (int)declinedOrder.Status, null);
             LoadOrders();
             MessageBox.Show($"Order number {id} has been declined.", "Order declined", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -272,6 +267,16 @@ namespace Pharmacy.UI
             clone.DispatchedDate = DateTime.Now;
             clone.Status = Status.Accepted;
             clone.ETA = this.ETADateTimePicker.Value;
+            IEnumerable<OrderMedicine> orderedMedicineList = await this.OrderService.ReadAllOrderMedicine();
+            foreach (OrderMedicine orderMedicine in orderedMedicineList)
+            {
+                if (orderMedicine.OrderID == clone.ID)
+                {
+                    Medicine medicine = await this.MedicineService.Read(orderMedicine.MedicineID);
+                    medicine.Quantity -= orderMedicine.Quantity;
+                    await this.MedicineService.Update(medicine.ID, medicine.Name, medicine.PackSize, medicine.Quantity, medicine.ExpirationDate);
+                }
+            }
             await this.OrderService.Update(clone.ID, (DateTime)clone.ETA, (int)clone.Destination, clone.Issuer,
                 (int)clone.Priority, clone.DispatchedDate, this.Account.Username, (int)clone.Status, null);
             LoadOrders();
@@ -289,18 +294,31 @@ namespace Pharmacy.UI
             this.ExpirationDateTimePicker.Value = updateMedicine.ExpirationDate;
             this.PackSizeNumericUpDown.Value = updateMedicine.PackSize;
             this.QuantityNumericUpDown.Value = updateMedicine.Quantity;
-            this.AddPictureBox.Image = Pharmacy.Properties.Resources.UPDATE1;
+            this.hiddenMedicineIDLabel.Text = updateMedicine.ID.ToString();
+            this.AddPictureBox.Image = Update;
         }
 
 
         private async void AddPictureBox_ClickAsync(object sender, EventArgs e)
         {
-            int id = new Random().Next(1, 2147483647);
-            string name = NameTextBox.Text;
-            DateTime expirationdate = ExpirationDateTimePicker.Value;
-            int packsize = (int)PackSizeNumericUpDown.Value;
-            int quantity = (int)QuantityNumericUpDown.Value;
-            await this.MedicineService.Create(id, name, packsize, quantity, expirationdate);
+            if (AddPictureBox.Image == Add)
+            {
+                int id = new Random().Next(1, 2147483647);
+                string name = NameTextBox.Text;
+                DateTime expirationdate = ExpirationDateTimePicker.Value;
+                int packsize = (int)PackSizeNumericUpDown.Value;
+                int quantity = (int)QuantityNumericUpDown.Value;
+                await this.MedicineService.Create(id, name, packsize, quantity, expirationdate);
+            }
+            else if (AddPictureBox.Image == Update)
+            {
+                Medicine updateMedicine = await this.MedicineService.Read(int.Parse(hiddenMedicineIDLabel.Text));
+                string name = NameTextBox.Text;
+                DateTime expirationdate = ExpirationDateTimePicker.Value;
+                int packsize = (int)PackSizeNumericUpDown.Value;
+                int quantity = (int)QuantityNumericUpDown.Value;
+                await this.MedicineService.Update(updateMedicine.ID, name, packsize, quantity, expirationdate);
+            }
         }
 
         private async void RemovePictureBox_Click(object sender, EventArgs e)

@@ -47,12 +47,12 @@ namespace Pharmacy.Service
             return await this.OrderMedicineRepository.GetAllAsync();
         }
 
-        public async Task Update(int id, DateTime eta, List<Medicine> medicines, int destination, string issuer, int priority, DateTime? dispatcheddate = null,string dispatcher=null, int status = 4, DateTime? confirmationdate = null)
+        public async Task Update(int id, DateTime? eta, List<Medicine> medicines, int destination, string issuer, int priority, DateTime? dispatcheddate = null,string dispatcher=null, int status = 4, DateTime? confirmationdate = null)
         {
             await this.OrderRepository.UpdateAsync(new Order(id, eta, medicines, destination, issuer, priority,dispatcheddate,dispatcher, status,confirmationdate));
         }
 
-        public async Task Update(int id, DateTime eta, int destination, string issuer, int priority, DateTime? dispatcheddate = null, string dispatcher = null, int status = 4, DateTime? confirmationdate = null)
+        public async Task Update(int id, DateTime? eta, int destination, string issuer, int priority, DateTime? dispatcheddate = null, string dispatcher = null, int status = 4, DateTime? confirmationdate = null)
         {
             await this.OrderRepository.UpdateAsync(new Order(id, eta, destination, issuer, priority, dispatcheddate, dispatcher, status, confirmationdate));
         }

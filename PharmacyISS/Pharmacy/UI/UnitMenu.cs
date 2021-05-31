@@ -121,8 +121,7 @@ namespace Pharmacy.UI
                         availability = "Normal";
                     if (medicine.Quantity >= 500)
                         availability = "High";
-                    if (medicine.Quantity >= 100)
-                        this.StorageDGV.Rows.Add(medicine.Name, medicine.PackSize, medicine.ExpirationDate, availability, medicine.ID);
+                    this.StorageDGV.Rows.Add(medicine.Name, medicine.PackSize, medicine.ExpirationDate, availability, medicine.ID);
                 }
             }
         }
@@ -133,11 +132,19 @@ namespace Pharmacy.UI
             IEnumerable<Order> orders = await this.OrderService.ReadAll();
             foreach(Order order in orders)
             {
-                if (order.DispatchedDate != null && order.ID.ToString().Contains(searchString)){
-                    if (order.Status == Domain.Status.Accepted || order.Status == Domain.Status.Refused)
-                        this.ConfirmationsDGV.Rows.Add(order.ID, order.Status, order.Dispatcher, order.DispatchedDate, ((DateTime)order.ETA).ToShortDateString());
-                    else if (order.Status == Domain.Status.Pending)
-                        this.ConfirmationsDGV.Rows.Add(order.ID, order.Status, "", "");
+                if (order.Status != Domain.Status.Confirmed && order.ID.ToString().Contains(searchString)){
+                    switch (order.Status)
+                    {
+                        case Domain.Status.Accepted:
+                            this.ConfirmationsDGV.Rows.Add(order.ID, order.Status, order.Dispatcher, order.DispatchedDate, ((DateTime)order.ETA).ToShortDateString());
+                            break;
+                        case Domain.Status.Pending:
+                            this.ConfirmationsDGV.Rows.Add(order.ID, order.Status);
+                            break;
+                        case Domain.Status.Refused:
+                            this.ConfirmationsDGV.Rows.Add(order.ID, order.Status, order.Dispatcher);
+                            break;
+                    }
                 }
             }
         }

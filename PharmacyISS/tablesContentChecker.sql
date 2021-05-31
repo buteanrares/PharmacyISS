@@ -7,5 +7,7 @@ select * from "Order"
 select * from OrderMedicine ORDER BY OrderID
 
 
+delete from Medicine
+
 delete from "Order"
 delete from OrderMedicine
