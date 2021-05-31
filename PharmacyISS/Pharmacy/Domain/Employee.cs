@@ -20,5 +20,14 @@ namespace Pharmacy.Domain
         protected internal String Forename { get; set; }
         protected internal DateTime HireDate { get; set; }
         protected internal WorkingUnit WorkingUnit { get; set; }
+
+        public Employee(int id, string surname, string forename, DateTime hiredate, WorkingUnit workingunit)
+        {
+            this.ID = id;
+            this.Surname = surname;
+            this.Forename = forename;
+            this.HireDate = hiredate;
+            this.WorkingUnit = workingunit;
+        }
     }
 }
