@@ -49,6 +49,7 @@ namespace Pharmacy.Repository
 
     class OrderMedicineRepository : GenericRepository<OrderMedicine>
     {
+
         public OrderMedicineRepository() : base("OrderMedicine") { }
     }
 }
