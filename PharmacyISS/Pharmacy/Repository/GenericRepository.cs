@@ -138,6 +138,8 @@ namespace Pharmacy.Repository
         {
             var updateQuery = new StringBuilder($"UPDATE {_tableName} SET ");
             var properties = GenerateListOfProperties(GetProperties);
+            properties.Remove("Medicines"); //For inserting into Order table
+
 
             properties.ForEach(property =>
             {
